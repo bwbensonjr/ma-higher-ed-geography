@@ -132,7 +132,11 @@ export function createMap(container, { onSelectArea, onSelectCampus } = {}) {
     },
 
     /** Draw one area layer, or none. */
-    setAreaLayer(collection, layer, { assignments, selectedAreaId = null } = {}) {
+    setAreaLayer(
+      collection,
+      layer,
+      { assignments, selectedAreaId = null, state = null } = {}
+    ) {
       clearAreas();
       renderLegend(collection ? layer : null);
       if (!collection) return;
@@ -142,7 +146,7 @@ export function createMap(container, { onSelectArea, onSelectCampus } = {}) {
         renderer: L.canvas({ padding: 0.3 }),
         style: (feature) => {
           const areaId = String(feature.properties.area_id);
-          const counts = areaCounts(assignments, layer, areaId);
+          const counts = areaCounts(assignments, layer, areaId, state);
           return areaStyle(layer, counts?.campuses ?? 0, {
             selected: selectedAreaId != null && areaId === String(selectedAreaId),
             dimmed: selectedAreaId != null && areaId !== String(selectedAreaId),
@@ -150,7 +154,7 @@ export function createMap(container, { onSelectArea, onSelectCampus } = {}) {
         },
         onEachFeature: (feature, featureLayer) => {
           const areaId = String(feature.properties.area_id);
-          const counts = areaCounts(assignments, layer, areaId);
+          const counts = areaCounts(assignments, layer, areaId, state);
           const name = feature.properties.name;
           featureLayer.bindTooltip(
             `<span class="area-tooltip"><strong>${name}</strong>${describeCounts(

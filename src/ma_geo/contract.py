@@ -22,6 +22,9 @@ from ma_geo.paths import OUT_DIR
 LAYERS = ("county", "municipality", "cbsa")
 
 # Identity and the attributes the table and the popup display.
+AWARD_TIERS = ("sub_associate", "two_year", "four_year")
+DEGREE_GRANTING_TIERS = ("two_year", "four_year")
+
 CAMPUS_REQUIRED = (
     "campus_id",
     "institution_id",
@@ -34,6 +37,7 @@ CAMPUS_REQUIRED = (
     "degrees_offered",
     "county_id",
     "municipality_id",
+    "award_tier",
 )
 CAMPUS_OPTIONAL = (
     "campus",
@@ -46,10 +50,19 @@ AREA_REQUIRED = ("area_id", "layer", "name")
 AREA_REQUIRED_BY_LAYER = {"municipality": ("county_id",)}
 
 ASSIGNMENT_LIST_FIELDS = ("campus_ids", "institution_ids")
-ASSIGNMENT_COUNT_FIELDS = ("campus_count", "institution_count")
+ASSIGNMENT_COUNT_FIELDS = (
+    "campus_count",
+    "institution_count",
+    "degree_granting_campus_count",
+    "degree_granting_institution_count",
+)
 
 # Figures the page displays out of the provenance record.
-PROVENANCE_REQUIRED = ("generated", "institution_count")
+PROVENANCE_REQUIRED = (
+    "generated",
+    "institution_count",
+    "degree_granting_institution_count",
+)
 
 AREA_INDEX_REQUIRED = ("name",)
 AREA_INDEX_REQUIRED_BY_LAYER = {"municipality": ("county_id",)}
@@ -90,6 +103,29 @@ def check_campus_fields(published: dict) -> None:
                     f"{CAMPUS_FILE}: {label} is missing the field {field!r}; "
                     f"the value may be empty but the field must be published"
                 )
+        if "degree_granting" not in properties:
+            raise ContractError(
+                f"{CAMPUS_FILE}: {label} is missing the required field "
+                f"'degree_granting', which the page reads"
+            )
+        if not isinstance(properties["degree_granting"], bool):
+            raise ContractError(
+                f"{CAMPUS_FILE}: {label} publishes 'degree_granting' as "
+                f"{type(properties['degree_granting']).__name__}, not a boolean"
+            )
+        if properties["award_tier"] not in AWARD_TIERS:
+            raise ContractError(
+                f"{CAMPUS_FILE}: {label} has award_tier "
+                f"{properties['award_tier']!r}, which is not one of "
+                f"{list(AWARD_TIERS)}"
+            )
+        expected = properties["award_tier"] in DEGREE_GRANTING_TIERS
+        if properties["degree_granting"] is not expected:
+            raise ContractError(
+                f"{CAMPUS_FILE}: {label} is award_tier "
+                f"{properties['award_tier']!r} but degree_granting "
+                f"{properties['degree_granting']!r}"
+            )
         if feature["geometry"]["type"] != "Point":
             raise ContractError(
                 f"{CAMPUS_FILE}: {label} is a "
@@ -153,6 +189,45 @@ def check_assignment_fields(published: dict) -> None:
                         f"{ASSIGNMENTS_FILE}: {layer}/{area_id} has {field!r} "
                         f"as {type(entry[field]).__name__}, not a whole number"
                     )
+
+
+def check_population_counts(published: dict) -> None:
+    """The published counts must agree with the campuses' own flags.
+
+    The page reads these counts rather than deriving them, so a count that
+    drifts from the flags would be displayed as fact with nothing to catch
+    it. Institution counts are not additive, which is why they are counted
+    here rather than left to a consumer.
+    """
+    campus_features = published[CAMPUS_FILE]["features"]
+    granting = {
+        f["properties"]["campus_id"]
+        for f in campus_features
+        if f["properties"].get("degree_granting")
+    }
+    institution_of = {
+        f["properties"]["campus_id"]: f["properties"]["institution_id"]
+        for f in campus_features
+    }
+    index = published[ASSIGNMENTS_FILE]
+    for layer in LAYERS:
+        for area_id, entry in index[layer].items():
+            members = [c for c in entry["campus_ids"] if c in granting]
+            if entry["degree_granting_campus_count"] != len(members):
+                raise ContractError(
+                    f"{ASSIGNMENTS_FILE}: {layer}/{area_id} publishes "
+                    f"degree_granting_campus_count "
+                    f"{entry['degree_granting_campus_count']} but its members' "
+                    f"flags in {CAMPUS_FILE} imply {len(members)}"
+                )
+            institutions = {institution_of[c] for c in members}
+            if entry["degree_granting_institution_count"] != len(institutions):
+                raise ContractError(
+                    f"{ASSIGNMENTS_FILE}: {layer}/{area_id} publishes "
+                    f"degree_granting_institution_count "
+                    f"{entry['degree_granting_institution_count']} but its "
+                    f"members' flags in {CAMPUS_FILE} imply {len(institutions)}"
+                )
 
 
 def check_references(published: dict) -> None:
@@ -300,5 +375,6 @@ def check_contract(published: dict) -> None:
     check_area_fields(published)
     check_assignment_fields(published)
     check_area_index(published)
+    check_population_counts(published)
     check_references(published)
     check_provenance_fields(published)

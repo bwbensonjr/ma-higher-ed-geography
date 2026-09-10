@@ -10,6 +10,7 @@ from ma_geo.paths import OUT_DIR
 def test_the_page_is_usable_at_375_pixels(driver):
     driver.page.set_viewport_size({"width": 375, "height": 750})
     driver.open()
+    driver.include_all_schools()
     metrics = driver.page.evaluate(
         """() => ({
             documentWidth: document.documentElement.scrollWidth,
@@ -67,7 +68,9 @@ def test_a_layer_can_be_selected_by_keyboard(driver):
     driver.page.select_option("#layer-select", "county")
     driver.page.keyboard.press("Enter")
     driver.settle(800)
-    assert driver.state() == {"layer": "county", "areaId": None}
+    assert driver.state() == {
+        "layer": "county", "areaId": None, "population": "degree_granting",
+    }
     assert driver.area_count() == 14
 
 
@@ -117,8 +120,10 @@ def test_the_clear_control_is_keyboard_operable(driver):
     driver.page.focus("#clear-selection")
     driver.page.keyboard.press("Enter")
     driver.settle(800)
-    assert driver.state() == {"layer": "county", "areaId": None}
-    assert driver.rows().count() == 206
+    assert driver.state() == {
+        "layer": "county", "areaId": None, "population": "degree_granting",
+    }
+    assert driver.rows().count() == 150
 
 
 def test_the_sort_controls_are_real_buttons(driver):
@@ -166,7 +171,7 @@ def test_the_accessibility_tree_exposes_a_table_with_named_columns(driver):
         assert header.count() >= 1, label
 
     # Rows and cells are exposed as such, not as a grid of divs.
-    assert driver.page.get_by_role("row").count() > 200
+    assert driver.page.get_by_role("row").count() > 100
     snapshot = driver.page.locator("#campus-table").aria_snapshot()
     assert "table" in snapshot
     assert "Institution" in snapshot

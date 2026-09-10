@@ -95,9 +95,16 @@ def test_a_failed_layer_load_is_not_cached_as_a_failure(blank):
 # --- 4.3 the indexes --------------------------------------------------------
 
 def test_the_sorted_campus_list_holds_every_campus(driver, campus_count):
+    """The index holds every campus; the population is applied on read."""
     driver.open()
     assert driver.page.evaluate("() => window.maGeo.indexes.sortedCampuses.length") == campus_count
     assert campus_count == 206
+    assert driver.page.evaluate(
+        "() => window.maGeo.indexes.campusesFor({population:'degree_granting'}).length"
+    ) == 150
+    assert driver.page.evaluate(
+        "() => window.maGeo.indexes.campusesFor({population:'all'}).length"
+    ) == 206
 
 
 def test_the_sorted_list_is_alphabetical_by_institution(driver):
@@ -109,13 +116,14 @@ def test_the_sorted_list_is_alphabetical_by_institution(driver):
 
 
 def test_boston_resolves_to_its_thirty_eight_campuses(driver):
+    """Membership is the published one, before any population is applied."""
     driver.open()
     boston = driver.page.evaluate(
         """() => {
             const index = window.maGeo.indexes;
             const entry = Object.entries(index.areaIndex.municipality)
                 .find(([, area]) => area.name === 'Boston');
-            const campuses = index.campusesIn('municipality', entry[0]);
+            const campuses = index.allCampusesIn('municipality', entry[0]);
             return {
                 areaId: entry[0],
                 campuses: campuses.length,
@@ -135,7 +143,7 @@ def test_membership_is_read_from_the_assignment_not_recomputed(driver):
             const index = window.maGeo.indexes;
             for (const layer of ['county', 'municipality', 'cbsa']) {
                 for (const [areaId, entry] of Object.entries(index.assignments[layer])) {
-                    const ids = index.campusesIn(layer, areaId).map(c => c.id);
+                    const ids = index.allCampusesIn(layer, areaId).map(c => c.id);
                     if (JSON.stringify(ids) !== JSON.stringify(entry.campus_ids)) {
                         return { layer, areaId, ids, expected: entry.campus_ids };
                     }

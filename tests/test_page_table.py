@@ -51,11 +51,14 @@ def test_the_table_is_a_real_table_with_named_columns(driver):
 
 def test_the_default_view_renders_a_row_per_campus(driver):
     driver.open()
+    assert driver.rows().count() == 150  # the default population
+    driver.include_all_schools()
     assert driver.rows().count() == 206
 
 
 def test_a_seven_campus_institution_occupies_seven_rows(driver):
     driver.open()
+    driver.include_all_schools()
     rows = driver.page.evaluate(
         """() => [...document.querySelectorAll('#campus-table tbody tr')]
             .map(tr => [...tr.querySelectorAll('td')].map(td => td.innerText.trim()))
@@ -96,13 +99,14 @@ def test_geography_names_come_from_the_index_not_the_mailing_city(driver):
 
 def test_rows_and_markers_correspond_in_every_mode(driver):
     driver.open()
+    driver.include_all_schools()
     assert driver.rows().count() == driver.marker_count() == 206
 
     driver.select_layer("county")
     driver.settle(600)
     assert driver.rows().count() == driver.marker_count() == 206
 
-    driver.open(f"/index.html#layer=county&area={SUFFOLK}")
+    driver.open(f"/index.html#layer=county&area={SUFFOLK}&population=all")
     driver.settle(700)
     assert driver.rows().count() == driver.marker_count()
 
@@ -149,6 +153,7 @@ def test_ordering_by_a_column_reorders_the_rows(driver):
 
 def test_the_filter_narrows_the_rows_and_the_count(driver):
     driver.open()
+    driver.include_all_schools()
     driver.page.fill("#filter-input", "harvard")
     driver.settle(300)
     institutions = driver.page.evaluate(
@@ -168,7 +173,7 @@ def test_the_filter_stays_out_of_the_hash_and_survives_a_layer_switch(driver):
     driver.settle(300)
     assert driver.page.evaluate("() => window.location.hash") == ""
     filtered = driver.rows().count()
-    assert 0 < filtered < 206
+    assert 0 < filtered < 150
 
     driver.select_layer("county")
     driver.settle(700)
@@ -180,6 +185,7 @@ def test_the_filter_stays_out_of_the_hash_and_survives_a_layer_switch(driver):
 
 def test_the_unrestricted_mode_is_alphabetical_with_all_geographies(driver):
     driver.open()
+    driver.include_all_schools()
     assert "All campuses, alphabetical by institution" in driver.text("#table-caption")
     institutions = driver.page.evaluate(
         """() => [...document.querySelectorAll(
@@ -194,6 +200,7 @@ def test_the_unrestricted_mode_is_alphabetical_with_all_geographies(driver):
 
 def test_the_grouped_mode_renders_one_body_per_county(driver):
     driver.open()
+    driver.include_all_schools()
     driver.select_layer("county")
     driver.settle(700)
     groups = driver.page.evaluate(
@@ -235,6 +242,7 @@ def test_the_grouped_mode_renders_one_body_per_county(driver):
 
 def test_grouping_by_municipality_places_each_campus_once(driver):
     driver.open()
+    driver.include_all_schools()
     driver.select_layer("municipality")
     driver.settle(1000)
     result = driver.page.evaluate(
@@ -256,7 +264,7 @@ def test_grouping_by_municipality_places_each_campus_once(driver):
 
 
 def test_the_single_geography_mode_names_its_restriction(driver):
-    driver.open(f"/index.html#layer=municipality&area={BOSTON}")
+    driver.open(f"/index.html#layer=municipality&area={BOSTON}&population=all")
     driver.settle(900)
     assert driver.rows().count() == 38
     assert "Boston" in driver.text("#table-caption")
@@ -285,7 +293,7 @@ def test_mode_switching_needs_no_reload(driver):
     driver.select_layer("none")
     driver.settle(400)
     assert driver.page.evaluate("() => window.__stayed === true")
-    assert driver.rows().count() == 206
+    assert driver.rows().count() == 150
 
 
 # --- 10.1 to 10.3 rows navigate to a geography -----------------------------
@@ -309,8 +317,8 @@ def test_a_row_county_selects_that_county(driver):
     counts = driver.page.evaluate(
         "() => window.maGeo.indexes.assignments.county[window.maGeo.state.areaId]"
     )
-    assert driver.rows().count() == counts["campus_count"]
-    assert driver.marker_count() == counts["campus_count"]
+    assert driver.rows().count() == counts["degree_granting_campus_count"]
+    assert driver.marker_count() == counts["degree_granting_campus_count"]
 
 
 def test_the_action_works_from_a_group_and_from_a_restricted_view(driver):
@@ -389,6 +397,7 @@ def test_every_published_campus_does_have_a_statistical_area(driver):
 def test_the_type_code_is_labeled_for_the_reader(driver):
     """The source publishes PUB/PRI; the table says what they mean."""
     driver.open()
+    driver.include_all_schools()
     types = driver.page.evaluate(
         """() => [...new Set([...document.querySelectorAll(
             '#campus-table tbody tr:not(.group-heading)')]

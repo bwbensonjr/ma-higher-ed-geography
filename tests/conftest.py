@@ -143,6 +143,14 @@ class PageDriver:
         self.page.select_option("#layer-select", layer)
         self.settle()
 
+    def include_all_schools(self, included=True):
+        """Operate the population control the way a visitor would."""
+        self.page.set_checked("#population-toggle", included)
+        self.settle(400)
+
+    def summary(self):
+        return self.text("#summary")
+
     def eval_module(self, module, expression):
         """Call into one of the page's ES modules directly."""
         return self.page.evaluate(

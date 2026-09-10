@@ -141,15 +141,28 @@ export function renderTable(table, model, handlers) {
   table.append(...bodies);
 }
 
+/** How the current population is named in a sentence about counts. */
+function populationSuffix(model) {
+  return model.degreeGrantingOnly
+    ? " Showing degree-granting institutions only."
+    : " Showing all schools, vocational and adult education included.";
+}
+
 /** The line above the table: what it holds, and what it is restricted to. */
 export function describeTable(model) {
   if (model.mode === "area") {
     const { name, counts } = model.restriction;
     if (counts && counts.campuses === 0) {
-      return `${name} contains no campuses.`;
+      return model.emptiedByPopulation
+        ? `${name} holds no degree-granting campuses, though it holds ` +
+          `${model.heldRegardless === 1 ? "one" : model.heldRegardless} in total.`
+        : `${name} contains no campuses.`;
     }
     const shown = model.filtering ? ` Showing ${model.rowCount}.` : "";
-    return `Restricted to ${name}: ${describeCounts(counts)}.${shown}`;
+    return (
+      `Restricted to ${name}: ${describeCounts(counts)}.${shown}` +
+      populationSuffix(model)
+    );
   }
   if (model.mode === "grouped") {
     const groups = plural(model.groups.length, "group");
@@ -157,11 +170,17 @@ export function describeTable(model) {
       model.omittedGroups > 0
         ? ` ${model.omittedGroups} with no campuses are not listed.`
         : "";
-    return `${plural(model.rowCount, "campus", "campuses")} in ${groups}.${omitted}`;
+    return (
+      `${plural(model.rowCount, "campus", "campuses")} in ${groups}.${omitted}` +
+      populationSuffix(model)
+    );
   }
   const of =
     model.rowCount === model.totalCount
       ? ""
       : ` of ${model.totalCount.toLocaleString("en-US")}`;
-  return `${plural(model.rowCount, "campus", "campuses")}${of}.`;
+  return (
+    `${plural(model.rowCount, "campus", "campuses")}${of}.` +
+    populationSuffix(model)
+  );
 }

@@ -13,7 +13,13 @@ SUFFOLK = "25025"
 def test_the_whole_page_works_with_the_tile_host_blocked(driver):
     driver.open()
 
-    # The first view: every campus, the statewide summary, the full table.
+    # The first view: the degree-granting population, summary, full table.
+    assert driver.marker_count() == 150
+    assert driver.rows().count() == 150
+    assert "150 campuses" in driver.text("#summary")
+    assert "116 institutions" in driver.text("#summary")
+
+    driver.include_all_schools()
     assert driver.marker_count() == 206
     assert driver.rows().count() == 206
     assert "206 campuses" in driver.text("#summary")

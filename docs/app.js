@@ -13,13 +13,16 @@ import { createLayerLoader, loadEager } from "./modules/data.js";
 import { createMap } from "./modules/map.js";
 import { describeTable, renderHead, renderTable } from "./modules/table.js";
 import { DEFAULT_SORT, tableModel } from "./modules/rows.js";
-import { describeCounts, plural, statewideCounts } from "./modules/counts.js";
+import { areaCounts, describeCounts, plural, statewideCounts } from "./modules/counts.js";
 import {
+  ALL_CAMPUSES,
   AREA_NOUNS,
+  DEGREE_GRANTING,
   LAYER_LABELS,
   NO_LAYER,
   defaultState,
   encodeState,
+  isDegreeGrantingOnly,
   normalizeState,
   parseHash,
   statesEqual,
@@ -31,6 +34,7 @@ const dom = {
   error: document.getElementById("error"),
   layerSelect: document.getElementById("layer-select"),
   filterInput: document.getElementById("filter-input"),
+  populationToggle: document.getElementById("population-toggle"),
   selectionStatus: document.getElementById("selection-status"),
   clearSelection: document.getElementById("clear-selection"),
   tableStatus: document.getElementById("table-status"),
@@ -87,34 +91,48 @@ function goTo(next) {
 }
 
 function selectArea(layer, areaId) {
-  goTo({ layer, areaId: String(areaId) });
+  goTo({ ...view.state, layer, areaId: String(areaId) });
+}
+
+function selectPopulation(population) {
+  // The population is part of the shared view, so it goes through the hash
+  // like every other selection rather than being applied in place.
+  goTo({ ...view.state, population });
 }
 
 function selectLayer(layer) {
   // Switching layers clears the geography: mapping a selection into the new
   // layer has no single right answer (Suffolk maps to four municipalities),
   // and silently picking one would misrepresent the visitor's selection.
-  goTo({ layer, areaId: null });
+  goTo({ ...view.state, layer, areaId: null });
 }
 
 function clearSelection() {
-  goTo({ layer: view.state.layer, areaId: null });
+  goTo({ ...view.state, areaId: null });
 }
 
 /* --- rendering ---------------------------------------------------------- */
 
 function renderSummary() {
-  const totals = statewideCounts(view.indexes.provenance, view.indexes.totals.campuses);
+  const campusList = view.indexes.campusesFor(view.state);
+  const totals = statewideCounts(
+    view.indexes.provenance,
+    campusList.length,
+    view.state
+  );
   dom.summary.innerHTML = "";
   const campuses = document.createElement("strong");
   campuses.textContent = plural(totals.campuses, "campus", "campuses");
   const institutions = document.createElement("strong");
   institutions.textContent = plural(totals.institutions, "institution");
+  const tail = isDegreeGrantingOnly(view.state)
+    ? " across Massachusetts, counting degree-granting institutions only."
+    : " across Massachusetts, including vocational and adult-education schools.";
   dom.summary.append(
     campuses,
     document.createTextNode(" at "),
     institutions,
-    document.createTextNode(" across Massachusetts.")
+    document.createTextNode(tail)
   );
 }
 
@@ -145,26 +163,25 @@ function renderProvenance() {
 function renderSelectionStatus() {
   const { layer, areaId } = view.state;
   const layerLabel = LAYER_LABELS[layer] ?? LAYER_LABELS.none;
+  const population = isDegreeGrantingOnly(view.state)
+    ? "Degree-granting institutions."
+    : "All schools, vocational and adult education included.";
   if (areaId) {
     const name = view.indexes.areaName(layer, areaId) ?? areaId;
     const counts = describeCounts(
-      view.indexes.assignments?.[layer]?.[areaId]
-        ? {
-            campuses: view.indexes.assignments[layer][areaId].campus_count,
-            institutions: view.indexes.assignments[layer][areaId].institution_count,
-          }
-        : null
+      areaCounts(view.indexes.assignments, layer, areaId, view.state)
     );
     dom.selectionStatus.textContent =
-      `Layer: ${layerLabel}. Selected ${AREA_NOUNS[layer]}: ${name} — ${counts}.`;
+      `${population} Layer: ${layerLabel}. Selected ${AREA_NOUNS[layer]}: ` +
+      `${name} — ${counts}.`;
     dom.clearSelection.hidden = false;
     dom.clearSelection.textContent = `Clear ${name}`;
   } else if (layer !== NO_LAYER) {
     dom.selectionStatus.textContent =
-      `Layer: ${layerLabel}. No ${AREA_NOUNS[layer]} selected — showing all campuses.`;
+      `${population} Layer: ${layerLabel}. No ${AREA_NOUNS[layer]} selected.`;
     dom.clearSelection.hidden = true;
   } else {
-    dom.selectionStatus.textContent = "No layer. Showing all campuses in Massachusetts.";
+    dom.selectionStatus.textContent = `${population} No layer selected.`;
     dom.clearSelection.hidden = true;
   }
 }
@@ -204,6 +221,7 @@ async function render() {
   const { layer, areaId } = view.state;
 
   dom.layerSelect.value = layer;
+  dom.populationToggle.checked = !isDegreeGrantingOnly(view.state);
 
   // Fetch this layer's geometry the first time it is drawn, and only then.
   let collection = null;
@@ -233,11 +251,12 @@ async function render() {
   view.map.setAreaLayer(collection, layer === NO_LAYER ? null : layer, {
     assignments: view.indexes.assignments,
     selectedAreaId: areaId,
+    state: view.state,
   });
 
   const campuses = areaId
-    ? view.indexes.campusesIn(layer, areaId)
-    : view.indexes.campuses;
+    ? view.indexes.campusesIn(layer, areaId, view.state)
+    : view.indexes.campusesFor(view.state);
   view.map.setCampuses(campuses);
 
   if (areaId) {
@@ -251,6 +270,7 @@ async function render() {
     view.map.fitState();
   }
 
+  renderSummary();
   renderSelectionStatus();
   renderTableSection();
 }
@@ -262,6 +282,9 @@ function wireControls() {
     selectLayer(event.target.value);
   });
   dom.clearSelection.addEventListener("click", clearSelection);
+  dom.populationToggle.addEventListener("change", (event) => {
+    selectPopulation(event.target.checked ? ALL_CAMPUSES : DEGREE_GRANTING);
+  });
   dom.filterInput.addEventListener("input", (event) => {
     // A view preference, not the thing being shared: deliberately not in
     // the hash, and preserved across selection changes.

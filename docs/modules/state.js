@@ -28,7 +28,28 @@ export const AREA_NOUNS = {
   cbsa: "statistical area",
 };
 
-export const DEFAULT_STATE = Object.freeze({ layer: NO_LAYER, areaId: null });
+/**
+ * Which population the page is reporting on. This is part of the shared
+ * view rather than a local preference: sort order and the text filter
+ * change what a visitor is looking at within a fixed set of facts, while
+ * the population changes which facts are being reported. A link saying
+ * "Middlesex has 22 institutions" has to carry it or it misleads.
+ */
+export const DEGREE_GRANTING = "degree_granting";
+export const ALL_CAMPUSES = "all";
+export const POPULATIONS = [DEGREE_GRANTING, ALL_CAMPUSES];
+export const DEFAULT_POPULATION = DEGREE_GRANTING;
+
+export const POPULATION_LABELS = {
+  [DEGREE_GRANTING]: "degree-granting institutions",
+  [ALL_CAMPUSES]: "all schools, including vocational and adult education",
+};
+
+export const DEFAULT_STATE = Object.freeze({
+  layer: NO_LAYER,
+  areaId: null,
+  population: DEFAULT_POPULATION,
+});
 
 export function defaultState() {
   return { ...DEFAULT_STATE };
@@ -40,9 +61,11 @@ export function parseHash(hash = "") {
   const params = new URLSearchParams(text);
   const layer = params.get("layer");
   const area = params.get("area");
+  const population = params.get("population");
   return {
     layer: layer === null ? null : layer,
     areaId: area === null || area === "" ? null : area,
+    population: population === null || population === "" ? null : population,
   };
 }
 
@@ -53,6 +76,11 @@ export function encodeState(state) {
   if (layer && layer !== NO_LAYER) {
     params.set("layer", layer);
     if (state.areaId) params.set("area", String(state.areaId));
+  }
+  // The default population is what an address that says nothing produces,
+  // so links made before this distinction existed still open coherently.
+  if (state?.population && state.population !== DEFAULT_POPULATION) {
+    params.set("population", state.population);
   }
   const query = params.toString();
   return query ? `#${query}` : "";
@@ -70,21 +98,33 @@ export function encodeState(state) {
 export function normalizeState(raw, areaIndex) {
   const layer = raw?.layer ?? null;
   const areaId = raw?.areaId == null ? null : String(raw.areaId);
+  // An unrecognized population degrades to the default rather than erroring.
+  const population = POPULATIONS.includes(raw?.population)
+    ? raw.population
+    : DEFAULT_POPULATION;
 
-  if (layer === null || layer === NO_LAYER) return defaultState();
-  if (!AREA_LAYERS.includes(layer)) return defaultState();
-  if (areaId === null) return { layer, areaId: null };
+  if (layer === null || layer === NO_LAYER) return { ...defaultState(), population };
+  if (!AREA_LAYERS.includes(layer)) return { ...defaultState(), population };
+  if (areaId === null) return { layer, areaId: null, population };
 
   const areas = areaIndex?.[layer];
   const known = !!areas && Object.prototype.hasOwnProperty.call(areas, areaId);
-  return known ? { layer, areaId } : defaultState();
+  return known
+    ? { layer, areaId, population }
+    : { ...defaultState(), population };
 }
 
 export function statesEqual(a, b) {
   return (
     (a?.layer ?? null) === (b?.layer ?? null) &&
-    (a?.areaId ?? null) === (b?.areaId ?? null)
+    (a?.areaId ?? null) === (b?.areaId ?? null) &&
+    (a?.population ?? null) === (b?.population ?? null)
   );
+}
+
+/** True when the state's population excludes the sub-associate campuses. */
+export function isDegreeGrantingOnly(state) {
+  return (state?.population ?? DEFAULT_POPULATION) === DEGREE_GRANTING;
 }
 
 /** Which of the three table modes a state calls for. */

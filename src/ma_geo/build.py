@@ -296,6 +296,40 @@ CAMPUS_PROPERTY_MAP = {
 }
 
 
+# The source's NCES type opens with the highest award the institution
+# offers: "< 2-year", "2-year", or "4-year" (sometimes qualified, as in
+# "4-year, primarily associate's"). That tier is what separates colleges and
+# universities from the cosmetology, trade, and adult-education schools the
+# layer also carries, and it comes from NCES rather than from anyone's
+# reading of an institution's name.
+AWARD_TIERS = {
+    "< 2-year": "sub_associate",
+    "2-year": "two_year",
+    "4-year": "four_year",
+}
+DEGREE_GRANTING_TIERS = ("two_year", "four_year")
+
+
+def award_tier(nces_type: str | None) -> str:
+    """Normalize the source's NCES type to an award tier.
+
+    Raises rather than guessing: a campus defaulted into either population
+    would silently misstate every count it contributes to.
+    """
+    leading = "" if not nces_type else str(nces_type).split(",")[0].strip()
+    tier = AWARD_TIERS.get(leading)
+    if tier is None:
+        raise BuildError(
+            f"cannot classify award tier from NCES type {nces_type!r}: "
+            f"leading token {leading!r} is not one of {sorted(AWARD_TIERS)}"
+        )
+    return tier
+
+
+def is_degree_granting(tier: str) -> bool:
+    return tier in DEGREE_GRANTING_TIERS
+
+
 def build_campus_layer(raw: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     data = {
         "campus_id": [
@@ -308,6 +342,15 @@ def build_campus_layer(raw: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
         data[out_name] = [
             None if pd.isna(v) or v == "" else v for v in raw[src_name]
         ]
+
+    tiers = []
+    for index, value in enumerate(data["nces_type"]):
+        try:
+            tiers.append(award_tier(value))
+        except BuildError as error:
+            raise BuildError(f"{data['campus_id'][index]}: {error}") from error
+    data["award_tier"] = tiers
+    data["degree_granting"] = [is_degree_granting(tier) for tier in tiers]
 
     frame = gpd.GeoDataFrame(data, geometry=raw.geometry.values, crs=4326)
 
@@ -377,6 +420,12 @@ def build_assignments_index(
     institution_of = dict(
         zip(campuses["campus_id"], campuses["institution_id"], strict=True)
     )
+    # A filtered consumer needs this population's counts published: an
+    # institution with campuses in two areas counts in both, so a filtered
+    # institution figure cannot be had by subtracting one count from another.
+    degree_granting = dict(
+        zip(campuses["campus_id"], campuses["degree_granting"], strict=True)
+    )
     index: dict[str, dict] = {}
 
     for layer, areas in area_layers.items():
@@ -387,6 +436,8 @@ def build_assignments_index(
                 "institution_ids": [],
                 "campus_count": 0,
                 "institution_count": 0,
+                "degree_granting_campus_count": 0,
+                "degree_granting_institution_count": 0,
             }
         for _, row in assignment.iterrows():
             area_id = row[f"{layer}_id"]
@@ -402,6 +453,11 @@ def build_assignments_index(
             entry["institution_ids"].sort()
             entry["campus_count"] = len(entry["campus_ids"])
             entry["institution_count"] = len(entry["institution_ids"])
+            granting = [c for c in entry["campus_ids"] if degree_granting[c]]
+            entry["degree_granting_campus_count"] = len(granting)
+            entry["degree_granting_institution_count"] = len(
+                {institution_of[c] for c in granting}
+            )
         index[layer] = dict(sorted(layer_index.items()))
 
     return index
@@ -634,6 +690,9 @@ def run_build(tolerance: float | None = None) -> int:
             "cbsa": len(full_res["cbsa"]),
         },
         institution_count=int(campus["institution_id"].nunique()),
+        degree_granting_institution_count=int(
+            campus.loc[campus["degree_granting"], "institution_id"].nunique()
+        ),
         cbsa_report=cbsa_report,
         discrepancies=len(discrepancies),
         campuses_without_cbsa=no_cbsa,
@@ -652,6 +711,7 @@ def build_provenance(
     tolerance: float,
     counts: dict[str, int],
     institution_count: int,
+    degree_granting_institution_count: int,
     cbsa_report: dict,
     discrepancies: int,
     campuses_without_cbsa: int,
@@ -688,6 +748,7 @@ def build_provenance(
             "area.json": {"bytes": sizes.get("area.json")},
         },
         "institution_count": institution_count,
+        "degree_granting_institution_count": degree_granting_institution_count,
         "simplification": {
             "method": "topojson topology-preserving",
             "tolerance_degrees": tolerance,

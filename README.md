@@ -4,14 +4,15 @@ Look at Massachusetts institutions of higher education by geographic area
 
 ## Features
 
-- An interactive map with a placemark for each of the 206 campuses over a light base map, so a campus reads in real geographic context at every zoom
+- An interactive map with a placemark for each campus over a light base map, so a campus reads in real geographic context at every zoom
 - A geographic layer selector over *Counties*, *Municipalities*, and *Statistical Areas*, each area shaded by how many campuses it holds
 - A table below the map with three modes
   - Nothing selected: every campus, alphabetical by institution, with its geographies as clickable links into the map
   - A layer selected: grouped by that layer's areas, each heading carrying the area's campus and institution counts
   - One geography selected: only that geography's campuses, with the map brought to it
 - One row is one campus, not one institution, so a row's address, municipality, county, and statistical area are all single-valued and each row is exactly one marker. Harvard therefore appears on seven rows
-- The selected layer and geography live in the URL, so any view is a shareable link and the browser's back button steps through selections
+- Degree-granting institutions by default, with a control that adds the vocational, trade, cosmetology, and adult-education schools the source also carries
+- The selected layer, geography, and population live in the URL, so any view is a shareable link and the browser's back button steps through selections
 - Hosted from `docs/` by GitHub Pages, with no server and no build step
 
 ## Viewing the page
@@ -22,7 +23,22 @@ Any static file server works, because that is all Pages is:
 uv run python -m http.server -d docs 8000   # then open http://localhost:8000
 ```
 
-The page fetches about 306 KB at load (the campus points, the assignment, the area names, the provenance) and reaches for an area layer's geometry only when you first draw that layer, which is why the initial view does not pay for all 1.6 MB of polygons.
+The page fetches about 339 KB at load (the campus points, the assignment, the area names, the provenance) and reaches for an area layer's geometry only when you first draw that layer, which is why the initial view does not pay for all 1.6 MB of polygons.
+
+### Two populations
+
+The MassGIS layer is titled *Colleges and Universities*, but 56 of its 206 campuses are not institutions of higher education in any ordinary sense: beauty, nail, and hairdressing academies, barbering and esthetics schools, truck-driving and electrical schools, and the practical-nursing and adult-evening divisions of regional vocational high schools. All 22 cosmetology-family campuses are among them.
+
+The page therefore opens on the **degree-granting** population -- 150 campuses at 116 institutions -- and a checkbox adds the rest back. Whichever population is showing governs the whole view together: markers, table rows, group headings, every count, and the statewide summary. The page says which one it is showing, because otherwise a figure on screen would be ambiguous.
+
+The line comes from the source, not from us. `nces_type` opens with the NCES award tier -- `< 2-year`, `2-year`, or `4-year` -- and the pipeline publishes it as `award_tier` plus a `degree_granting` flag. Every one of the 206 records has a tier, and a record the pipeline cannot classify fails the build rather than defaulting into either population.
+
+Why the tier and not something else:
+
+- **Not MassGIS's own `category`.** It misses 13 vocational schools filed under other categories, and it would wrongly drop four real colleges: Urban College of Boston, Bard College's Holyoke Microcollege, Springfield College's continuing-education campus, and FINE Mortuary College.
+- **Not certificate-only awards.** That is the tier's 56 plus three 2-year institutions that happen to award only certificates -- National Aviation Academy of New England, North Bennet Street School, and Signature Healthcare Brockton Hospital School of Nursing -- which read as colleges.
+
+Worth knowing: several practical-nursing programs run by regional vocational high schools are sub-associate, so the default view omits real nursing training. It is one checkbox away. And 17 municipalities hold campuses of which none are degree-granting; those say so explicitly rather than reporting that they hold nothing.
 
 ### The base map
 
@@ -60,11 +76,11 @@ The page's own behavior is verified in a real browser: `pytest` serves `docs/` o
 
 | File | Contents |
 | --- | --- |
-| `campus.geojson` | 206 campus points, EPSG:4326, each with `campus_id`, `institution_id`, and its `county_id`, `municipality_id`, and `cbsa_id` |
+| `campus.geojson` | 206 campus points, EPSG:4326, each with `campus_id`, `institution_id`, its `award_tier` and `degree_granting` flag, and its `county_id`, `municipality_id`, and `cbsa_id` |
 | `county.geojson` | 14 counties |
 | `municipality.geojson` | 351 cities and towns |
 | `cbsa.geojson` | the 10 statistical areas covering Massachusetts |
-| `assignments.json` | per area: `campus_ids`, `institution_ids`, `campus_count`, `institution_count` |
+| `assignments.json` | per area: `campus_ids`, `institution_ids`, and both populations' counts |
 | `area.json` | per area: its display `name`, plus `county_id` for a municipality |
 | `provenance.json` | each source, its vintage, the fetch date, feature counts, and the simplification tolerance |
 
@@ -72,7 +88,9 @@ The page's own behavior is verified in a real browser: `pytest` serves `docs/` o
 
 Every area carries a stable `area_id` (county and municipality use MassGIS/FIPS codes, statistical areas use the Census `CBSAFP`) plus a display `name`.
 
-### Two things to know about the data
+### Three things to know about the data
+
+**Institution counts are published per population and are never derived.** Each area carries `campus_count` and `institution_count` for all campuses plus `degree_granting_campus_count` and `degree_granting_institution_count` for the default population, and `provenance.json` carries both statewide institution figures, 160 and 116. A filtered institution count cannot be had by subtracting one from the other, because an institution with campuses in two areas is counted in both.
 
 **Campuses and institutions are different counts.** The 206 campus records belong to 160 institutions. 24 institutions have several campuses and 21 of those cross municipal lines, so Boston holds 38 campuses but 35 institutions. Each campus has exactly one municipality and one county, so campus counts add up; an institution is counted in every area it has a campus in, so *institution counts do not add up*. Harvard counts in both Suffolk and Middlesex. Summing `institution_count` across a layer exceeds the 160 in the state, and should never be shown as a total — `provenance.json` carries the statewide figure.
 

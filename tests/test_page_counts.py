@@ -16,12 +16,17 @@ def test_area_counts_come_from_the_published_assignment(blank):
         """async () => {
             const m = await import('./modules/counts.js');
             const assignments = await fetch('data/assignments.json').then(r => r.json());
-            return { boston: m.areaCounts(assignments, 'municipality', '35'),
-                     described: m.describeCounts(m.areaCounts(assignments, 'municipality', '35')),
-                     missing: m.areaCounts(assignments, 'county', 'nope') };
+            const whole = {population: 'all'};
+            const filtered = {population: 'degree_granting'};
+            return { boston: m.areaCounts(assignments, 'municipality', '35', whole),
+                     bostonFiltered: m.areaCounts(assignments, 'municipality', '35', filtered),
+                     described: m.describeCounts(
+                        m.areaCounts(assignments, 'municipality', '35', whole)),
+                     missing: m.areaCounts(assignments, 'county', 'nope', whole) };
         }"""
     )
     assert result["boston"] == {"campuses": 38, "institutions": 35}
+    assert result["bostonFiltered"] == {"campuses": 37, "institutions": 34}
     assert result["described"] == "38 campuses, 35 institutions"
     assert result["missing"] is None
 
@@ -40,11 +45,15 @@ def test_the_statewide_institution_figure_comes_only_from_provenance(blank):
         """async () => {
             const m = await import('./modules/counts.js');
             const provenance = await fetch('data/provenance.json').then(r => r.json());
-            return { published: m.statewideCounts(provenance, 206),
-                     absent: m.statewideCounts({}, 206) };
+            const whole = {population: 'all'};
+            return { published: m.statewideCounts(provenance, 206, whole),
+                     filtered: m.statewideCounts(provenance, 150,
+                        {population: 'degree_granting'}),
+                     absent: m.statewideCounts({}, 206, whole) };
         }"""
     )
     assert result["published"] == {"campuses": 206, "institutions": 160}
+    assert result["filtered"] == {"campuses": 150, "institutions": 116}
     # With no published figure there is nothing to fall back on: better null
     # than a number the page invented.
     assert result["absent"]["institutions"] is None
@@ -86,14 +95,19 @@ def test_no_module_sums_an_institution_count():
 def test_the_summary_states_both_published_figures(driver):
     driver.open()
     summary = driver.text("#summary")
-    assert "206 campuses" in summary
-    assert "160 institutions" in summary
+    assert "150 campuses" in summary
+    assert "116 institutions" in summary
+
+    driver.include_all_schools()
+    widened = driver.text("#summary")
+    assert "206 campuses" in widened
+    assert "160 institutions" in widened
 
 
 def test_the_summary_is_read_from_the_data_not_written_into_the_page():
     html = (DOCS / "index.html").read_text()
-    assert "206" not in html
-    assert "160" not in html
+    for figure in ("206", "160", "150", "116"):
+        assert figure not in html, figure
     provenance = json.loads((OUT_DIR / "provenance.json").read_text())
     assert provenance["institution_count"] == 160
 
@@ -121,6 +135,14 @@ def test_no_summed_institution_total_appears_anywhere(driver):
         driver.settle(900)
         text = f"{driver.text('#summary')} {driver.text('#table-status')} {driver.text('#selection-status')}"
         assert str(sums[layer]) not in text, (layer, text)
+        # The default population's published statewide figure, never a sum.
+        assert "116 institutions" in driver.text("#summary")
+
+    driver.include_all_schools()
+    for layer in ("county", "municipality", "cbsa"):
+        driver.select_layer(layer)
+        driver.settle(900)
+        assert str(sums[layer]) not in driver.text("#summary")
         assert "160 institutions" in driver.text("#summary")
 
 
@@ -129,11 +151,14 @@ def test_a_campus_total_may_be_a_sum(driver):
     driver.open()
     driver.select_layer("county")
     driver.settle(700)
+    assert "150 campuses" in driver.text("#table-status")
+    driver.include_all_schools()
     assert "206 campuses" in driver.text("#table-status")
 
 
 def test_the_grouped_headings_report_per_area_counts_not_shares(driver):
     driver.open()
+    driver.include_all_schools()
     driver.select_layer("cbsa")
     driver.settle(900)
     headings = driver.page.evaluate(

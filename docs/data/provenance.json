@@ -30,7 +30,7 @@
   "published": {
     "campus.geojson": {
       "features": 206,
-      "bytes": 174350
+      "bytes": 184480
     },
     "county.geojson": {
       "features": 14,
@@ -45,13 +45,14 @@
       "bytes": 390422
     },
     "assignments.json": {
-      "bytes": 100997
+      "bytes": 133644
     },
     "area.json": {
       "bytes": 27026
     }
   },
   "institution_count": 160,
+  "degree_granting_institution_count": 116,
   "simplification": {
     "method": "topojson topology-preserving",
     "tolerance_degrees": 0.0002,

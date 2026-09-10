@@ -13,7 +13,9 @@
         "upper-cape-cod-regional-vocational-technical-school-practical-nursing-program"
       ],
       "campus_count": 4,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 3,
+      "degree_granting_institution_count": 2
     },
     "25003": {
       "campus_ids": [
@@ -29,7 +31,9 @@
         "williams-college"
       ],
       "campus_count": 4,
-      "institution_count": 4
+      "institution_count": 4,
+      "degree_granting_campus_count": 3,
+      "degree_granting_institution_count": 3
     },
     "25005": {
       "campus_ids": [
@@ -65,7 +69,9 @@
         "wheaton-college"
       ],
       "campus_count": 17,
-      "institution_count": 11
+      "institution_count": 11,
+      "degree_granting_campus_count": 11,
+      "degree_granting_institution_count": 7
     },
     "25007": {
       "campus_ids": [
@@ -75,7 +81,9 @@
         "cape-cod-community-college-adult-and-continuing-education-martha-s-vineyard"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "25009": {
       "campus_ids": [
@@ -120,7 +128,9 @@
         "vip-beauty-academy"
       ],
       "campus_count": 20,
-      "institution_count": 17
+      "institution_count": 17,
+      "degree_granting_campus_count": 15,
+      "degree_granting_institution_count": 12
     },
     "25011": {
       "campus_ids": [
@@ -132,7 +142,9 @@
         "thomas-aquinas-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "25013": {
       "campus_ids": [
@@ -169,7 +181,9 @@
         "westfield-state-university"
       ],
       "campus_count": 15,
-      "institution_count": 14
+      "institution_count": 14,
+      "degree_granting_campus_count": 12,
+      "degree_granting_institution_count": 11
     },
     "25015": {
       "campus_ids": [
@@ -187,7 +201,9 @@
         "university-of-massachusetts-amherst"
       ],
       "campus_count": 5,
-      "institution_count": 5
+      "institution_count": 5,
+      "degree_granting_campus_count": 5,
+      "degree_granting_institution_count": 5
     },
     "25017": {
       "campus_ids": [
@@ -278,7 +294,9 @@
         "woburn-electrical-school"
       ],
       "campus_count": 45,
-      "institution_count": 38
+      "institution_count": 38,
+      "degree_granting_campus_count": 28,
+      "degree_granting_institution_count": 22
     },
     "25019": {
       "campus_ids": [
@@ -288,7 +306,9 @@
         "university-of-massachusetts-nantucket-field-station"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "25021": {
       "campus_ids": [
@@ -336,7 +356,9 @@
         "wellesley-college"
       ],
       "campus_count": 20,
-      "institution_count": 20
+      "institution_count": 20,
+      "degree_granting_campus_count": 12,
+      "degree_granting_institution_count": 12
     },
     "25023": {
       "campus_ids": [
@@ -360,7 +382,9 @@
         "spa-tech-institute"
       ],
       "campus_count": 9,
-      "institution_count": 7
+      "institution_count": 7,
+      "degree_granting_campus_count": 6,
+      "degree_granting_institution_count": 4
     },
     "25025": {
       "campus_ids": [
@@ -444,7 +468,9 @@
         "wentworth-institute-of-technology"
       ],
       "campus_count": 40,
-      "institution_count": 36
+      "institution_count": 36,
+      "degree_granting_campus_count": 38,
+      "degree_granting_institution_count": 34
     },
     "25027": {
       "campus_ids": [
@@ -498,7 +524,9 @@
         "worcester-state-university"
       ],
       "campus_count": 23,
-      "institution_count": 23
+      "institution_count": 23,
+      "degree_granting_campus_count": 13,
+      "degree_granting_institution_count": 13
     }
   },
   "municipality": {
@@ -506,13 +534,17 @@
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "10": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "100": {
       "campus_ids": [
@@ -526,7 +558,9 @@
         "massachusetts-bay-community-college"
       ],
       "campus_count": 3,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "101": {
       "campus_ids": [
@@ -538,13 +572,17 @@
         "tri-county-regional-vocational-technical-high-school-adult-education"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "102": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "103": {
       "campus_ids": [
@@ -554,49 +592,65 @@
         "mount-wachusett-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "104": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "105": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "106": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "107": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "108": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "109": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "11": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "110": {
       "campus_ids": [
@@ -606,25 +660,33 @@
         "tufts-university"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "111": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "112": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "113": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "114": {
       "campus_ids": [
@@ -634,31 +696,41 @@
         "greenfield-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "115": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "116": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "117": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "118": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "119": {
       "campus_ids": [
@@ -668,61 +740,81 @@
         "gordon-conwell-theological-seminary"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "12": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "120": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "121": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "122": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "123": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "124": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "125": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "126": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "127": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "128": {
       "campus_ids": [
@@ -734,61 +826,81 @@
         "northpoint-bible-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "129": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "13": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "130": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "131": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "132": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "133": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "134": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "135": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "136": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "137": {
       "campus_ids": [
@@ -800,19 +912,25 @@
         "holyoke-community-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "138": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "139": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "14": {
       "campus_ids": [
@@ -822,61 +940,81 @@
         "massachusetts-bay-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "140": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "141": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "142": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "143": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "144": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "145": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "146": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "147": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "148": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "149": {
       "campus_ids": [
@@ -892,67 +1030,89 @@
         "vip-beauty-academy"
       ],
       "campus_count": 4,
-      "institution_count": 4
+      "institution_count": 4,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "15": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "150": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "151": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "152": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "153": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "154": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "155": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "156": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "157": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "158": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "159": {
       "campus_ids": [
@@ -962,7 +1122,9 @@
         "bay-path-university"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "16": {
       "campus_ids": [
@@ -972,7 +1134,9 @@
         "bristol-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "160": {
       "campus_ids": [
@@ -986,13 +1150,17 @@
         "university-of-massachusetts-lowell"
       ],
       "campus_count": 3,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "161": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "162": {
       "campus_ids": [
@@ -1002,7 +1170,9 @@
         "alexander-academy"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "163": {
       "campus_ids": [
@@ -1012,13 +1182,17 @@
         "north-shore-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "164": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "165": {
       "campus_ids": [
@@ -1030,37 +1204,49 @@
         "new-england-hair-academy"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "166": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "167": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "168": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "169": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "17": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "170": {
       "campus_ids": [
@@ -1070,37 +1256,49 @@
         "assabet-after-dark"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "171": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "172": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "173": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "174": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "175": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "176": {
       "campus_ids": [
@@ -1112,43 +1310,57 @@
         "tufts-university"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "177": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "178": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "179": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "18": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "180": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "181": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "182": {
       "campus_ids": [
@@ -1158,43 +1370,57 @@
         "massasoit-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "183": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "184": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "185": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "186": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "187": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "188": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "189": {
       "campus_ids": [
@@ -1206,49 +1432,65 @@
         "laboure-college-of-healthcare"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "19": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "190": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "191": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "192": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "193": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "194": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "195": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "196": {
       "campus_ids": [
@@ -1258,7 +1500,9 @@
         "northeastern-university"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "197": {
       "campus_ids": [
@@ -1268,13 +1512,17 @@
         "university-of-massachusetts-nantucket-field-station"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "198": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "199": {
       "campus_ids": [
@@ -1284,13 +1532,17 @@
         "franklin-w-olin-college-of-engineering"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "2": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "20": {
       "campus_ids": [
@@ -1301,13 +1553,17 @@
         "cape-cod-community-college"
       ],
       "campus_count": 2,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 1
     },
     "200": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "201": {
       "campus_ids": [
@@ -1322,37 +1578,49 @@
         "university-of-massachusetts-dartmouth-school-for-marine-science-and-technology"
       ],
       "campus_count": 4,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 3,
+      "degree_granting_institution_count": 2
     },
     "202": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "203": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "204": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "205": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "206": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "207": {
       "campus_ids": [
@@ -1369,13 +1637,17 @@
         "william-james-college"
       ],
       "campus_count": 5,
-      "institution_count": 4
+      "institution_count": 4,
+      "degree_granting_campus_count": 5,
+      "degree_granting_institution_count": 4
     },
     "208": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "209": {
       "campus_ids": [
@@ -1387,13 +1659,17 @@
         "massachusetts-college-of-liberal-arts"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "21": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "210": {
       "campus_ids": [
@@ -1407,25 +1683,33 @@
         "spa-tech-institute"
       ],
       "campus_count": 3,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "211": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "212": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "213": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "214": {
       "campus_ids": [
@@ -1437,19 +1721,25 @@
         "smith-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "215": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "216": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "217": {
       "campus_ids": [
@@ -1459,7 +1749,9 @@
         "thomas-aquinas-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "218": {
       "campus_ids": [
@@ -1469,19 +1761,25 @@
         "wheaton-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "219": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "22": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "220": {
       "campus_ids": [
@@ -1493,7 +1791,9 @@
         "martin-electrical-school"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "221": {
       "campus_ids": [
@@ -1503,31 +1803,41 @@
         "cape-cod-community-college-adult-and-continuing-education-martha-s-vineyard"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "222": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "223": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "224": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "225": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "226": {
       "campus_ids": [
@@ -1537,25 +1847,33 @@
         "technology-learning-center"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "227": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "228": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "229": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "23": {
       "campus_ids": [
@@ -1565,43 +1883,57 @@
         "middlesex-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "230": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "231": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "232": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "233": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "234": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "235": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "236": {
       "campus_ids": [
@@ -1611,19 +1943,25 @@
         "berkshire-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "237": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "238": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "239": {
       "campus_ids": [
@@ -1635,31 +1973,41 @@
         "spa-tech-institute"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "24": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "240": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "241": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "242": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "243": {
       "campus_ids": [
@@ -1671,31 +2019,41 @@
         "quincy-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "244": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "245": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "246": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "247": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "248": {
       "campus_ids": [
@@ -1705,67 +2063,89 @@
         "flavia-leal-beauty-school"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "249": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "25": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "250": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "251": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "252": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "253": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "254": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "255": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "256": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "257": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "258": {
       "campus_ids": [
@@ -1775,7 +2155,9 @@
         "salem-state-university"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "259": {
       "campus_ids": [
@@ -1785,43 +2167,57 @@
         "northern-essex-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "26": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "260": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "261": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "262": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "263": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "264": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "265": {
       "campus_ids": [
@@ -1831,67 +2227,89 @@
         "motoring-technical-training-institute"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "266": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "267": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "268": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "269": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "27": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "270": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "271": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "272": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "273": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "274": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "275": {
       "campus_ids": [
@@ -1901,43 +2319,57 @@
         "mount-holyoke-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "276": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "277": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "278": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "279": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "28": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "280": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "281": {
       "campus_ids": [
@@ -1958,79 +2390,105 @@
         "western-new-england-university"
       ],
       "campus_count": 7,
-      "institution_count": 6
+      "institution_count": 6,
+      "degree_granting_campus_count": 7,
+      "degree_granting_institution_count": 6
     },
     "282": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "283": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "284": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "285": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "286": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "287": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "288": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "289": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "29": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "290": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "291": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "292": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "293": {
       "campus_ids": [
@@ -2042,13 +2500,17 @@
         "rob-roy-academy"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "294": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "295": {
       "campus_ids": [
@@ -2058,37 +2520,49 @@
         "electrology-institute-of-new-england-inc"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "296": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "297": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "298": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "299": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "3": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "30": {
       "campus_ids": [
@@ -2100,13 +2574,17 @@
         "montserrat-college-of-art"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "300": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "301": {
       "campus_ids": [
@@ -2116,13 +2594,17 @@
         "greater-lowell-technical-school-adult-education"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "302": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "303": {
       "campus_ids": [
@@ -2132,13 +2614,17 @@
         "blackstone-valley-vocational-regional-school-post-secondary-nursing-program"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "304": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "305": {
       "campus_ids": [
@@ -2148,19 +2634,25 @@
         "hair-s-how"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "306": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "307": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "308": {
       "campus_ids": [
@@ -2174,13 +2666,17 @@
         "nv-my-hair-academy"
       ],
       "campus_count": 3,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "309": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "31": {
       "campus_ids": [
@@ -2190,49 +2686,65 @@
         "shawsheen-valley-school-of-practical-nursing"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "310": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "311": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "312": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "313": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "314": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "315": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "316": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "317": {
       "campus_ids": [
@@ -2246,25 +2758,33 @@
         "wellesley-college"
       ],
       "campus_count": 3,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 3,
+      "degree_granting_institution_count": 3
     },
     "318": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "319": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "32": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "320": {
       "campus_ids": [
@@ -2274,31 +2794,41 @@
         "gordon-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "321": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "322": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "323": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "324": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "325": {
       "campus_ids": [
@@ -2308,19 +2838,25 @@
         "digrigoli-school-of-cosmetology"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "326": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "327": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "328": {
       "campus_ids": [
@@ -2330,7 +2866,9 @@
         "spa-tech-institute"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "329": {
       "campus_ids": [
@@ -2340,31 +2878,41 @@
         "westfield-state-university"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "33": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "330": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "331": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "332": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "333": {
       "campus_ids": [
@@ -2376,13 +2924,17 @@
         "regis-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "334": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "335": {
       "campus_ids": [
@@ -2392,25 +2944,33 @@
         "peterson-school"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "336": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "337": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "338": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "339": {
       "campus_ids": [
@@ -2420,19 +2980,25 @@
         "monarch-school-of-cosmetology"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "34": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "340": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "341": {
       "campus_ids": [
@@ -2442,37 +3008,49 @@
         "williams-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "342": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "343": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "344": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "345": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "346": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "347": {
       "campus_ids": [
@@ -2494,7 +3072,9 @@
         "woburn-electrical-school"
       ],
       "campus_count": 7,
-      "institution_count": 7
+      "institution_count": 7,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "348": {
       "campus_ids": [
@@ -2530,13 +3110,17 @@
         "worcester-state-university"
       ],
       "campus_count": 14,
-      "institution_count": 14
+      "institution_count": 14,
+      "degree_granting_campus_count": 9,
+      "degree_granting_institution_count": 9
     },
     "349": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "35": {
       "campus_ids": [
@@ -2617,19 +3201,25 @@
         "wentworth-institute-of-technology"
       ],
       "campus_count": 38,
-      "institution_count": 35
+      "institution_count": 35,
+      "degree_granting_campus_count": 37,
+      "degree_granting_institution_count": 34
     },
     "350": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "351": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "36": {
       "campus_ids": [
@@ -2641,31 +3231,41 @@
         "upper-cape-cod-regional-vocational-technical-school-practical-nursing-program"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "37": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "38": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "39": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "4": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "40": {
       "campus_ids": [
@@ -2677,13 +3277,17 @@
         "millennium-training-institute"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "41": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "42": {
       "campus_ids": [
@@ -2695,13 +3299,17 @@
         "cape-cod-community-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "43": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "44": {
       "campus_ids": [
@@ -2717,13 +3325,17 @@
         "signature-healthcare-brockton-hospital-school-of-nursing"
       ],
       "campus_count": 4,
-      "institution_count": 4
+      "institution_count": 4,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "45": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "46": {
       "campus_ids": [
@@ -2735,13 +3347,17 @@
         "hellenic-college-holy-cross-greek-orthodox-school-of-theology"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "47": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "48": {
       "campus_ids": [
@@ -2751,7 +3367,9 @@
         "northeastern-university"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "49": {
       "campus_ids": [
@@ -2774,13 +3392,17 @@
         "massachusetts-institute-of-technology"
       ],
       "campus_count": 9,
-      "institution_count": 6
+      "institution_count": 6,
+      "degree_granting_campus_count": 9,
+      "degree_granting_institution_count": 6
     },
     "5": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "50": {
       "campus_ids": [
@@ -2794,43 +3416,57 @@
         "pec-university"
       ],
       "campus_count": 3,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "51": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "52": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "53": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "54": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "55": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "56": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "57": {
       "campus_ids": [
@@ -2840,31 +3476,41 @@
         "bunker-hill-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "58": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "59": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "6": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "60": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "61": {
       "campus_ids": [
@@ -2876,37 +3522,49 @@
         "porter-and-chester-institute"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "62": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "63": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "64": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "65": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "66": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "67": {
       "campus_ids": [
@@ -2916,31 +3574,41 @@
         "national-aviation-academy-of-new-england"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "68": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "69": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "7": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "70": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "71": {
       "campus_ids": [
@@ -2950,7 +3618,9 @@
         "north-shore-community-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "72": {
       "campus_ids": [
@@ -2962,49 +3632,65 @@
         "university-of-massachusetts-school-of-law"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "73": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "74": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "75": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "76": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "77": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "78": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "79": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "8": {
       "campus_ids": [
@@ -3016,7 +3702,9 @@
         "university-of-massachusetts-amherst"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "80": {
       "campus_ids": [
@@ -3026,49 +3714,65 @@
         "nichols-college"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "81": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "82": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "83": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "84": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "85": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "86": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "87": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "88": {
       "campus_ids": [
@@ -3080,13 +3784,17 @@
         "stonehill-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "89": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "9": {
       "campus_ids": [
@@ -3098,37 +3806,49 @@
         "massachusetts-school-of-law"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "90": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "91": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "92": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "93": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "94": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "95": {
       "campus_ids": [
@@ -3144,13 +3864,17 @@
         "university-of-massachusetts-dartmouth-center-for-innovation-and-entrepreneurship"
       ],
       "campus_count": 4,
-      "institution_count": 4
+      "institution_count": 4,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "96": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "97": {
       "campus_ids": [
@@ -3162,19 +3886,25 @@
         "montachusett-regional-vocational-technical-school-practical-nursing-program"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "98": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     },
     "99": {
       "campus_ids": [],
       "institution_ids": [],
       "campus_count": 0,
-      "institution_count": 0
+      "institution_count": 0,
+      "degree_granting_campus_count": 0,
+      "degree_granting_institution_count": 0
     }
   },
   "cbsa": {
@@ -3194,7 +3924,9 @@
         "university-of-massachusetts-amherst"
       ],
       "campus_count": 5,
-      "institution_count": 5
+      "institution_count": 5,
+      "degree_granting_campus_count": 5,
+      "degree_granting_institution_count": 5
     },
     "12700": {
       "campus_ids": [
@@ -3209,7 +3941,9 @@
         "upper-cape-cod-regional-vocational-technical-school-practical-nursing-program"
       ],
       "campus_count": 4,
-      "institution_count": 3
+      "institution_count": 3,
+      "degree_granting_campus_count": 3,
+      "degree_granting_institution_count": 2
     },
     "14460": {
       "campus_ids": [
@@ -3456,7 +4190,9 @@
         "woburn-electrical-school"
       ],
       "campus_count": 134,
-      "institution_count": 105
+      "institution_count": 105,
+      "degree_granting_campus_count": 99,
+      "degree_granting_institution_count": 75
     },
     "24640": {
       "campus_ids": [
@@ -3468,7 +4204,9 @@
         "thomas-aquinas-college"
       ],
       "campus_count": 2,
-      "institution_count": 2
+      "institution_count": 2,
+      "degree_granting_campus_count": 2,
+      "degree_granting_institution_count": 2
     },
     "34880": {
       "campus_ids": [
@@ -3478,7 +4216,9 @@
         "university-of-massachusetts-nantucket-field-station"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "38340": {
       "campus_ids": [
@@ -3494,7 +4234,9 @@
         "williams-college"
       ],
       "campus_count": 4,
-      "institution_count": 4
+      "institution_count": 4,
+      "degree_granting_campus_count": 3,
+      "degree_granting_institution_count": 3
     },
     "39300": {
       "campus_ids": [
@@ -3530,7 +4272,9 @@
         "wheaton-college"
       ],
       "campus_count": 17,
-      "institution_count": 11
+      "institution_count": 11,
+      "degree_granting_campus_count": 11,
+      "degree_granting_institution_count": 7
     },
     "44140": {
       "campus_ids": [
@@ -3567,7 +4311,9 @@
         "westfield-state-university"
       ],
       "campus_count": 15,
-      "institution_count": 14
+      "institution_count": 14,
+      "degree_granting_campus_count": 12,
+      "degree_granting_institution_count": 11
     },
     "47240": {
       "campus_ids": [
@@ -3577,7 +4323,9 @@
         "cape-cod-community-college-adult-and-continuing-education-martha-s-vineyard"
       ],
       "campus_count": 1,
-      "institution_count": 1
+      "institution_count": 1,
+      "degree_granting_campus_count": 1,
+      "degree_granting_institution_count": 1
     },
     "49340": {
       "campus_ids": [
@@ -3631,7 +4379,9 @@
         "worcester-state-university"
       ],
       "campus_count": 23,
-      "institution_count": 23
+      "institution_count": 23,
+      "degree_granting_campus_count": 13,
+      "degree_granting_institution_count": 13
     }
   }
 }

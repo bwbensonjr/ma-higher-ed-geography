@@ -32,7 +32,7 @@ def test_the_page_says_it_is_loading_before_the_data_arrives(driver):
     assert "206" not in driver.text("#table-status")
     driver.wait_for_data()
     assert driver.page.locator("#notice").is_hidden()
-    assert driver.rows().count() == 206
+    assert driver.rows().count() == 150
 
 
 # --- 12.2 a failed eager fetch ---------------------------------------------
@@ -74,9 +74,9 @@ def test_a_blocked_layer_degrades_and_leaves_the_rest_usable(driver):
 
     # The table still works: it needs the assignment and the name index only.
     assert driver.area_count() == 0
-    assert driver.marker_count() == 206
-    assert driver.rows().count() == 206
-    assert driver.page.locator("#campus-table tbody").count() == 83
+    assert driver.marker_count() == 150
+    assert driver.rows().count() == 150
+    assert driver.page.locator("#campus-table tbody").count() == 66
 
     # And the other layers are unaffected.
     driver.select_layer("county")
@@ -107,7 +107,10 @@ def test_an_empty_municipality_is_a_valid_result(driver):
     driver.open(f"/index.html#layer=municipality&area={area_id}")
     driver.settle(1000)
 
-    assert driver.state() == {"layer": "municipality", "areaId": area_id}
+    assert driver.state() == {
+        "layer": "municipality", "areaId": area_id,
+        "population": "degree_granting",
+    }
     status = driver.text("#table-status")
     assert f"{EMPTY_MUNICIPALITY_NAME} contains no campuses" in status
     assert driver.rows().count() == 0
@@ -137,8 +140,8 @@ def test_the_page_is_fully_usable_with_the_tile_host_blocked(driver):
     """The default fixture blocks tiles, so this is the whole suite's premise."""
     driver.open()
     assert driver.tile_requests() == [] or True
-    assert driver.marker_count() == 206
-    assert driver.rows().count() == 206
+    assert driver.marker_count() == 150
+    assert driver.rows().count() == 150
     assert driver.page.locator("#error").is_hidden()
     assert "could not" not in driver.text("#notice").lower()
 

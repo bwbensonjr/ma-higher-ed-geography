@@ -82,6 +82,8 @@ def test_the_tiles_sit_beneath_the_areas_and_the_markers(driver):
 
 def test_the_map_renders_one_marker_per_campus(driver):
     driver.open()
+    assert driver.marker_count() == 150  # the default population
+    driver.include_all_schools()
     assert driver.marker_count() == 206
 
 

@@ -20,9 +20,9 @@ def test_a_valid_state_round_trips(blank):
         }"""
     )
     assert result == [
-        {"layer": "none", "areaId": None},
-        {"layer": "county", "areaId": None},
-        {"layer": "county", "areaId": "25025"},
+        {"layer": "none", "areaId": None, "population": "degree_granting"},
+        {"layer": "county", "areaId": None, "population": "degree_granting"},
+        {"layer": "county", "areaId": "25025", "population": "degree_granting"},
     ]
 
 
@@ -43,18 +43,25 @@ def test_unrecognized_addresses_normalize_to_the_default_view(blank):
             return hashes.map((hash) => m.normalizeState(m.parseHash(hash), index));
         }"""
     )
-    assert all(state == {"layer": "none", "areaId": None} for state in outcomes), outcomes
+    assert all(
+        state == {"layer": "none", "areaId": None, "population": "degree_granting"}
+        for state in outcomes
+    ), outcomes
 
 
 def test_the_default_view_has_no_hash(blank):
-    assert blank.eval_module("state", "m.encodeState({layer:'none',areaId:null})") == ""
+    assert blank.eval_module(
+        "state", "m.encodeState({layer:'none',areaId:null,population:'degree_granting'})"
+    ) == ""
 
 
 def test_an_unrecognized_address_still_renders_the_default_view(driver):
     driver.open("/index.html#layer=galaxy&area=nowhere")
-    assert driver.state() == {"layer": "none", "areaId": None}
-    assert driver.marker_count() == 206
-    assert driver.rows().count() == 206
+    assert driver.state() == {
+        "layer": "none", "areaId": None, "population": "degree_granting",
+    }
+    assert driver.marker_count() == 150
+    assert driver.rows().count() == 150
     assert driver.page.locator("#error").is_hidden()
 
 
@@ -106,8 +113,9 @@ def test_selecting_a_county_restricts_the_map_and_the_table(driver):
     counts = driver.page.evaluate(
         f"() => window.maGeo.indexes.assignments.county['{SUFFOLK}']"
     )
-    assert driver.marker_count() == counts["campus_count"]
-    assert driver.rows().count() == counts["campus_count"]
+    # The default population, so the degree-granting counts are the ones shown.
+    assert driver.marker_count() == counts["degree_granting_campus_count"]
+    assert driver.rows().count() == counts["degree_granting_campus_count"]
     assert "Suffolk" in driver.text("#selection-status")
     assert "Suffolk" in driver.text("#table-status")
 
@@ -160,9 +168,11 @@ def test_clearing_the_selection_restores_everything(driver):
     assert driver.page.locator("#clear-selection").is_visible()
     driver.page.click("#clear-selection")
     driver.settle(600)
-    assert driver.state() == {"layer": "county", "areaId": None}
-    assert driver.marker_count() == 206
-    assert driver.rows().count() == 206
+    assert driver.state() == {
+        "layer": "county", "areaId": None, "population": "degree_granting",
+    }
+    assert driver.marker_count() == 150
+    assert driver.rows().count() == 150
     assert driver.page.locator("#clear-selection").is_hidden()
     assert driver.area_count() == 14
 
@@ -182,9 +192,11 @@ def test_switching_layers_clears_the_selection(driver):
     driver.settle(600)
     driver.select_layer("municipality")
     driver.settle(900)
-    assert driver.state() == {"layer": "municipality", "areaId": None}
+    assert driver.state() == {
+        "layer": "municipality", "areaId": None, "population": "degree_granting",
+    }
     assert SUFFOLK not in driver.page.evaluate("() => window.location.hash")
-    assert driver.marker_count() == 206
+    assert driver.marker_count() == 150
     assert "No municipality selected" in driver.text("#selection-status")
 
 
@@ -203,19 +215,20 @@ def test_back_steps_through_the_selections(driver):
         }"""
     )
     driver.settle(700)
-    assert driver.state() == {"layer": "county", "areaId": SUFFOLK}
+    dg = "degree_granting"
+    assert driver.state() == {"layer": "county", "areaId": SUFFOLK, "population": dg}
 
     driver.page.go_back()
     driver.settle(700)
-    assert driver.state() == {"layer": "county", "areaId": None}
+    assert driver.state() == {"layer": "county", "areaId": None, "population": dg}
 
     driver.page.go_back()
     driver.settle(700)
-    assert driver.state() == {"layer": "none", "areaId": None}
+    assert driver.state() == {"layer": "none", "areaId": None, "population": dg}
 
     driver.page.go_forward()
     driver.settle(700)
-    assert driver.state() == {"layer": "county", "areaId": None}
+    assert driver.state() == {"layer": "county", "areaId": None, "population": dg}
 
 
 def test_a_shared_address_restores_the_whole_view(driver):
@@ -230,8 +243,8 @@ def test_a_shared_address_restores_the_whole_view(driver):
     assert name in driver.text("#selection-status")
     assert name in driver.text("#table-status")
     counts = driver.page.evaluate("() => window.maGeo.indexes.assignments.municipality['35']")
-    assert driver.rows().count() == counts["campus_count"]
-    assert driver.marker_count() == counts["campus_count"]
+    assert driver.rows().count() == counts["degree_granting_campus_count"]
+    assert driver.marker_count() == counts["degree_granting_campus_count"]
     assert driver.area_count() == 351
 
 

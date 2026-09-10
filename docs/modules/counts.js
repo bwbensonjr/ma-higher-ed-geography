@@ -8,21 +8,51 @@
  * statewide institution figure comes from the published provenance record.
  */
 
+import { isDegreeGrantingOnly } from "./state.js";
+
+// The assignment publishes both populations' counts, so a filtered figure
+// is read rather than computed by subtracting one from the other -- which
+// would be wrong for institutions, since one with campuses in two areas is
+// counted in both.
+// Keyed by whether the population is filtered rather than by the
+// population's name, so this module names published *fields* and never
+// reads a campus's own flag -- filtering happens in one place, the index.
+const AREA_FIELDS = {
+  whole: { campuses: "campus_count", institutions: "institution_count" },
+  filtered: {
+    campuses: "degree_granting_campus_count",
+    institutions: "degree_granting_institution_count",
+  },
+};
+
+const STATEWIDE_INSTITUTION_FIELD = {
+  whole: "institution_count",
+  filtered: "degree_granting_institution_count",
+};
+
+function fieldsFor(state) {
+  return isDegreeGrantingOnly(state) ? AREA_FIELDS.filtered : AREA_FIELDS.whole;
+}
+
 /** Per-area counts, read from the published assignment. Never derived. */
-export function areaCounts(assignments, layer, areaId) {
+export function areaCounts(assignments, layer, areaId, state) {
   const entry = assignments?.[layer]?.[String(areaId)];
   if (!entry) return null;
+  const fields = fieldsFor(state);
   return {
-    campuses: entry.campus_count,
-    institutions: entry.institution_count,
+    campuses: entry[fields.campuses],
+    institutions: entry[fields.institutions],
   };
 }
 
-/** The statewide figures: campuses counted, institutions as published. */
-export function statewideCounts(provenance, campusCount) {
+/** The statewide figures for a population, both as published. */
+export function statewideCounts(provenance, campusCount, state) {
+  const field = isDegreeGrantingOnly(state)
+    ? STATEWIDE_INSTITUTION_FIELD.filtered
+    : STATEWIDE_INSTITUTION_FIELD.whole;
   return {
     campuses: campusCount,
-    institutions: provenance?.institution_count ?? null,
+    institutions: provenance?.[field] ?? null,
   };
 }
 

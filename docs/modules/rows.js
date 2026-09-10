@@ -14,7 +14,7 @@
 
 import { compareText } from "./indexes.js";
 import { areaCounts } from "./counts.js";
-import { AREA_NOUNS, tableMode } from "./state.js";
+import { AREA_NOUNS, isDegreeGrantingOnly, tableMode } from "./state.js";
 
 export const COLUMNS = [
   { key: "institution", label: "Institution", sortable: true },
@@ -99,7 +99,8 @@ export function sortRows(rows, sort = DEFAULT_SORT) {
  */
 export function tableModel({ indexes, state, sort = DEFAULT_SORT, filter = "" }) {
   const mode = tableMode(state);
-  const allRows = indexes.sortedCampuses.map((campus) => buildRow(campus, indexes));
+  // The population is applied once, in the index; nothing here re-filters.
+  const allRows = indexes.campusesFor(state).map((campus) => buildRow(campus, indexes));
   const byId = new Map(allRows.map((row) => [row.campusId, row]));
   const filtered = allRows.filter((row) => matchesFilter(row, filter));
   const filtering = !!filter && filter.trim().length > 0;
@@ -113,7 +114,10 @@ export function tableModel({ indexes, state, sort = DEFAULT_SORT, filter = "" })
       rowCount: rows.length,
       totalCount: allRows.length,
       filtering,
-      caption: "All campuses, alphabetical by institution",
+      degreeGrantingOnly: isDegreeGrantingOnly(state),
+      caption: isDegreeGrantingOnly(state)
+        ? "Degree-granting campuses, alphabetical by institution"
+        : "All campuses, alphabetical by institution",
       restriction: null,
       empty: rows.length === 0,
       emptyNote: filtering
@@ -126,10 +130,11 @@ export function tableModel({ indexes, state, sort = DEFAULT_SORT, filter = "" })
   if (mode === "area") {
     const { layer, areaId } = state;
     const name = indexes.areaName(layer, areaId) ?? areaId;
-    const counts = areaCounts(indexes.assignments, layer, areaId);
+    const counts = areaCounts(indexes.assignments, layer, areaId, state);
+    const held = indexes.allCampusesIn(layer, areaId).length;
     const rows = sortRows(
       indexes
-        .campusesIn(layer, areaId)
+        .campusesIn(layer, areaId, state)
         .map((campus) => byId.get(campus.id))
         .filter((row) => row && matchesFilter(row, filter)),
       sort
@@ -141,12 +146,23 @@ export function tableModel({ indexes, state, sort = DEFAULT_SORT, filter = "" })
       rowCount: rows.length,
       totalCount: counts?.campuses ?? rows.length,
       filtering,
+      degreeGrantingOnly: isDegreeGrantingOnly(state),
       caption: `Campuses in ${name}`,
       restriction: { layer, areaId, name, counts, noun: AREA_NOUNS[layer] },
       empty: rows.length === 0,
+      // An area emptied by the population is not an area holding nothing:
+      // 17 municipalities hold campuses of which none are degree-granting,
+      // and reporting those as simply empty would misstate the data.
+      emptiedByPopulation:
+        counts?.campuses === 0 && held > 0 && isDegreeGrantingOnly(state),
+      heldRegardless: held,
       emptyNote:
         counts && counts.campuses === 0
-          ? `${name} contains no campuses.`
+          ? held > 0 && isDegreeGrantingOnly(state)
+            ? `${name} holds no degree-granting campuses. It holds ` +
+              `${held === 1 ? "one campus" : `${held} campuses`} in total, ` +
+              `which the control above will show.`
+            : `${name} contains no campuses.`
           : "No institution in this area matches that text.",
       omittedGroups: 0,
     };
@@ -160,10 +176,10 @@ export function tableModel({ indexes, state, sort = DEFAULT_SORT, filter = "" })
   let omittedGroups = 0;
   let shownRows = 0;
   for (const area of indexes.areasByName(layer)) {
-    const counts = areaCounts(indexes.assignments, layer, area.areaId);
+    const counts = areaCounts(indexes.assignments, layer, area.areaId, state);
     const rows = sortRows(
       indexes
-        .campusesIn(layer, area.areaId)
+        .campusesIn(layer, area.areaId, state)
         .map((campus) => byId.get(campus.id))
         .filter((row) => row && matchesFilter(row, filter)),
       sort
@@ -191,7 +207,10 @@ export function tableModel({ indexes, state, sort = DEFAULT_SORT, filter = "" })
     rowCount: shownRows,
     totalCount: allRows.length,
     filtering,
-    caption: `Campuses grouped by ${AREA_NOUNS[layer]}`,
+    degreeGrantingOnly: isDegreeGrantingOnly(state),
+    caption: isDegreeGrantingOnly(state)
+      ? `Degree-granting campuses grouped by ${AREA_NOUNS[layer]}`
+      : `Campuses grouped by ${AREA_NOUNS[layer]}`,
     restriction: null,
     empty: groups.length === 0,
     emptyNote: filtering

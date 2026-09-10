@@ -15,7 +15,7 @@ def test_switching_layers_replaces_the_drawn_areas(driver):
     driver.select_layer("municipality")
     driver.settle(800)
     assert driver.area_count() == 351
-    assert driver.marker_count() == markers_before == 206
+    assert driver.marker_count() == markers_before == 150
 
 
 def test_the_no_layer_view_draws_no_areas_and_keeps_the_markers(driver):
@@ -25,7 +25,7 @@ def test_the_no_layer_view_draws_no_areas_and_keeps_the_markers(driver):
     driver.select_layer("none")
     driver.settle(400)
     assert driver.area_count() == 0
-    assert driver.marker_count() == 206
+    assert driver.marker_count() == 150
     assert driver.page.locator(".legend").count() == 0
 
 
@@ -118,10 +118,13 @@ def test_the_drawn_areas_use_those_styles(driver):
             map.eachLayer((layer) => {
                 if (!layer.feature || !layer.feature.properties.area_id) return;
                 const areaId = String(layer.feature.properties.area_id);
-                const count = index.assignments.county[areaId].campus_count;
+                const entry = index.assignments.county[areaId];
                 seen.push({
                     actual: layer.options.fillColor,
-                    expected: m.colorFor('county', count),
+                    // The default population, so the degree-granting count
+                    // is the one the shading must reflect.
+                    expected: m.colorFor('county', entry.degree_granting_campus_count),
+                    wholePopulation: m.colorFor('county', entry.campus_count),
                 });
             });
             return seen;
@@ -129,6 +132,11 @@ def test_the_drawn_areas_use_those_styles(driver):
     )
     assert len(fills) == 14
     assert all(entry["actual"] == entry["expected"] for entry in fills)
+    # And a county that changes class between populations proves the shading
+    # is not simply reading the same number either way.
+    assert any(
+        entry["expected"] != entry["wholePopulation"] for entry in fills
+    ), "no county changes shading class between the two populations"
 
 
 # --- 6.4 the legend ---------------------------------------------------------
@@ -195,9 +203,26 @@ def test_hovering_an_area_reveals_its_name_and_both_counts(driver):
         }"""
     )
     assert "Suffolk" in tooltip["text"]
-    assert str(tooltip["counts"]["campus_count"]) in tooltip["text"]
-    assert str(tooltip["counts"]["institution_count"]) in tooltip["text"]
+    # The default population's counts, not the whole-population ones.
+    assert str(tooltip["counts"]["degree_granting_campus_count"]) in tooltip["text"]
+    assert str(tooltip["counts"]["degree_granting_institution_count"]) in tooltip["text"]
     assert "campuses" in tooltip["text"] and "institution" in tooltip["text"]
+
+    driver.include_all_schools()
+    driver.settle(600)
+    widened = driver.page.evaluate(
+        """() => {
+            let text = null;
+            window.maGeo.map.map.eachLayer((layer) => {
+                if (!layer.feature || text) return;
+                if (layer.feature.properties.name !== 'Suffolk') return;
+                text = layer.getTooltip().getContent();
+            });
+            return text;
+        }"""
+    )
+    assert str(tooltip["counts"]["campus_count"]) in widened
+    assert str(tooltip["counts"]["institution_count"]) in widened
 
 
 def test_a_selected_area_lets_the_basemap_through(driver):

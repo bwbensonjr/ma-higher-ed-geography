@@ -35,7 +35,7 @@ def test_no_console_errors_on_load(driver):
 def test_modules_can_be_called_directly(blank):
     """A trivial round-trip, so later logic tests need no UI."""
     parsed = blank.eval_module("state", "m.parseHash('#layer=county&area=25025')")
-    assert parsed == {"layer": "county", "areaId": "25025"}
+    assert parsed == {"layer": "county", "areaId": "25025", "population": None}
     assert blank.eval_module("state", "m.encodeState({layer:'county',areaId:'25025'})") == (
         "#layer=county&area=25025"
     )

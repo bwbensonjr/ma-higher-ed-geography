@@ -7,12 +7,18 @@
  * naming a campus's geographies costs no geometry.
  */
 
-import { AREA_LAYERS } from "./state.js";
+import { AREA_LAYERS, isDegreeGrantingOnly } from "./state.js";
 
 const collator = new Intl.Collator("en", { sensitivity: "base", numeric: true });
 
 export function compareText(a, b) {
   return collator.compare(a ?? "", b ?? "");
+}
+
+/** The population filter itself: read from the published flag, never derived. */
+function applyPopulation(campuses, state) {
+  if (!isDegreeGrantingOnly(state)) return campuses;
+  return campuses.filter((campus) => campus.degree_granting);
 }
 
 /** One campus: its published properties, its coordinates, its area ids. */
@@ -82,7 +88,23 @@ export function buildIndexes({ campusCollection, assignments, areaIndex, provena
         .map(([areaId, entry]) => ({ areaId, ...entry }))
         .sort((a, b) => compareText(a.name, b.name));
     },
-    campusesIn(layer, areaId) {
+    /**
+     * Every campus of a state's population, statewide.
+     *
+     * This and campusesIn below are the ONLY places the population is
+     * applied. The map, the table model, and the count helpers all draw
+     * from them, which is what keeps markers, rows, and stated counts from
+     * disagreeing about what they are describing.
+     */
+    campusesFor(state) {
+      return applyPopulation(sortedCampuses, state);
+    },
+    campusesIn(layer, areaId, state) {
+      const members = campusesByArea[layer]?.get(String(areaId)) ?? [];
+      return applyPopulation(members, state);
+    },
+    /** The unfiltered membership, for reporting what a filter left out. */
+    allCampusesIn(layer, areaId) {
       return campusesByArea[layer]?.get(String(areaId)) ?? [];
     },
   };
