@@ -1,0 +1,143 @@
+{
+  "generated": "2026-09-10",
+  "sources": {
+    "colleges": {
+      "title": "MassGIS Colleges and Universities",
+      "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Colleges_and_Universities/FeatureServer/0",
+      "fetched": "2026-09-10",
+      "source_count": 206
+    },
+    "counties": {
+      "title": "MassGIS Massachusetts Counties with Generalized Coastline",
+      "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1",
+      "fetched": "2026-09-10",
+      "source_count": 14
+    },
+    "municipalities": {
+      "title": "MassGIS Massachusetts Municipalities with Generalized Coast",
+      "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/TownSurveyGenCoast_gdb/FeatureServer/1",
+      "fetched": "2026-09-10",
+      "source_count": 351
+    },
+    "cbsa": {
+      "title": "Census TIGER/Line 2025 Core Based Statistical Areas",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2025/CBSA/tl_2025_us_cbsa.zip",
+      "vintage": "TIGER2025",
+      "fetched": "2026-09-10",
+      "archive_bytes": 34964000
+    }
+  },
+  "published": {
+    "campus.geojson": {
+      "features": 206,
+      "bytes": 174350
+    },
+    "county.geojson": {
+      "features": 14,
+      "bytes": 413606
+    },
+    "municipality.geojson": {
+      "features": 351,
+      "bytes": 781685
+    },
+    "cbsa.geojson": {
+      "features": 10,
+      "bytes": 390422
+    },
+    "assignments.json": {
+      "bytes": 100997
+    }
+  },
+  "institution_count": 160,
+  "simplification": {
+    "method": "topojson topology-preserving",
+    "tolerance_degrees": 0.0002,
+    "size_budget_bytes": 2000000
+  },
+  "derivation": {
+    "method": "municipality polygons simplified once, dissolved on county_id into counties, dissolved on TIGER CBSA membership into statistical areas",
+    "cbsa_membership": {
+      "12700": [
+        "25001"
+      ],
+      "38340": [
+        "25003"
+      ],
+      "39300": [
+        "25005"
+      ],
+      "47240": [
+        "25007"
+      ],
+      "14460": [
+        "25009",
+        "25017",
+        "25021",
+        "25023",
+        "25025"
+      ],
+      "24640": [
+        "25011"
+      ],
+      "44140": [
+        "25013"
+      ],
+      "11200": [
+        "25015"
+      ],
+      "34880": [
+        "25019"
+      ],
+      "49340": [
+        "25027"
+      ]
+    },
+    "cbsa_excluded": [
+      {
+        "area_id": "10580",
+        "name": "Albany-Schenectady-Troy, NY Metro Area"
+      },
+      {
+        "area_id": "13540",
+        "name": "Bennington, VT Micro Area"
+      },
+      {
+        "area_id": "14710",
+        "name": "Brattleboro, VT Micro Area"
+      },
+      {
+        "area_id": "25540",
+        "name": "Hartford-West Hartford-East Hartford, CT Metro Area"
+      },
+      {
+        "area_id": "26460",
+        "name": "Hudson, NY Micro Area"
+      },
+      {
+        "area_id": "28300",
+        "name": "Keene, NH Micro Area"
+      },
+      {
+        "area_id": "31700",
+        "name": "Manchester-Nashua, NH Metro Area"
+      },
+      {
+        "area_id": "39480",
+        "name": "Putnam, CT Micro Area"
+      },
+      {
+        "area_id": "45860",
+        "name": "Torrington, CT Micro Area"
+      }
+    ],
+    "county_cross_check": {
+      "worst_relative_difference": 0.002211,
+      "worst_county": "25025"
+    }
+  },
+  "reports": {
+    "municipality_discrepancies": 0,
+    "campuses_without_cbsa": 0
+  },
+  "notes": "Institution counts are per-area and non-additive: an institution with campuses in two areas is counted in both, so summing institution_count across a layer exceeds institution_count above. Campus counts do sum."
+}
