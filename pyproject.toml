@@ -17,6 +17,7 @@ ma-geo = "ma_geo.cli:main"
 
 [dependency-groups]
 dev = [
+    "playwright>=1.62.0",
     "pytest>=8.0",
 ]
 

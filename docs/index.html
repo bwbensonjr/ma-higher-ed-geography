@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Massachusetts College and University Geography</title>
+<meta name="description" content="Massachusetts colleges and universities by county, municipality, and statistical area.">
+<link rel="stylesheet" href="vendor/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="page-header">
+  <div class="titles">
+    <h1>Massachusetts College and University Geography</h1>
+    <p class="summary" id="summary" aria-live="polite">Loading the published data&hellip;</p>
+  </div>
+
+  <div class="controls">
+    <div class="control">
+      <label for="layer-select">Geographic layer</label>
+      <select id="layer-select">
+        <option value="none">No layer (campuses only)</option>
+        <option value="county">Counties</option>
+        <option value="municipality">Municipalities</option>
+        <option value="cbsa">Statistical areas</option>
+      </select>
+    </div>
+    <div class="control">
+      <label for="filter-input">Find an institution</label>
+      <input id="filter-input" type="search" placeholder="Type part of a name" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<p class="notice" id="notice" role="status" hidden></p>
+<p class="notice error" id="error" role="alert" hidden></p>
+
+<div class="selection-bar">
+  <p id="selection-status" aria-live="polite">Showing all campuses in Massachusetts.</p>
+  <button type="button" id="clear-selection" hidden>Clear selection</button>
+</div>
+
+<main>
+  <section class="map-section" aria-label="Map of campuses">
+    <div id="map"></div>
+  </section>
+
+  <section class="table-section" aria-labelledby="table-heading">
+    <h2 id="table-heading">Campuses</h2>
+    <p class="table-status" id="table-status" aria-live="polite">Loading&hellip;</p>
+    <div class="table-scroll" id="table-scroll" tabindex="0" role="region" aria-labelledby="table-heading">
+      <table id="campus-table">
+        <caption id="table-caption">All campuses, alphabetical by institution</caption>
+        <thead>
+          <tr id="table-head-row"></tr>
+        </thead>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <h2>About this data</h2>
+  <p id="provenance-summary"></p>
+  <ul id="provenance-sources"></ul>
+  <p class="attribution" id="data-attribution">
+    Campus and geography data from
+    <a href="https://www.mass.gov/info-details/massgis-data-colleges-and-universities">MassGIS</a>
+    and the
+    <a href="https://www.census.gov/geographies/reference-files.html">U.S. Census Bureau</a>.
+    Base map tiles by <a href="https://carto.com/attributions">CARTO</a>, map data
+    <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap contributors</a>.
+  </p>
+  <p class="attribution">
+    Opening this page requests base map tiles from CARTO, which discloses your
+    network address and the area you are viewing to that provider. Everything
+    else the page shows is served from this repository.
+  </p>
+</footer>
+
+<script src="vendor/leaflet/1.9.4/leaflet.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

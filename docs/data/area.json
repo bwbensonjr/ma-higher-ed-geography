@@ -1,0 +1,1484 @@
+{
+  "county": {
+    "25001": {
+      "name": "Barnstable"
+    },
+    "25003": {
+      "name": "Berkshire"
+    },
+    "25005": {
+      "name": "Bristol"
+    },
+    "25007": {
+      "name": "Dukes"
+    },
+    "25009": {
+      "name": "Essex"
+    },
+    "25011": {
+      "name": "Franklin"
+    },
+    "25013": {
+      "name": "Hampden"
+    },
+    "25015": {
+      "name": "Hampshire"
+    },
+    "25017": {
+      "name": "Middlesex"
+    },
+    "25019": {
+      "name": "Nantucket"
+    },
+    "25021": {
+      "name": "Norfolk"
+    },
+    "25023": {
+      "name": "Plymouth"
+    },
+    "25025": {
+      "name": "Suffolk"
+    },
+    "25027": {
+      "name": "Worcester"
+    }
+  },
+  "municipality": {
+    "1": {
+      "name": "Abington",
+      "county_id": "25023"
+    },
+    "2": {
+      "name": "Acton",
+      "county_id": "25017"
+    },
+    "3": {
+      "name": "Acushnet",
+      "county_id": "25005"
+    },
+    "4": {
+      "name": "Adams",
+      "county_id": "25003"
+    },
+    "5": {
+      "name": "Agawam",
+      "county_id": "25013"
+    },
+    "6": {
+      "name": "Alford",
+      "county_id": "25003"
+    },
+    "7": {
+      "name": "Amesbury",
+      "county_id": "25009"
+    },
+    "8": {
+      "name": "Amherst",
+      "county_id": "25015"
+    },
+    "9": {
+      "name": "Andover",
+      "county_id": "25009"
+    },
+    "104": {
+      "name": "Aquinnah",
+      "county_id": "25007"
+    },
+    "10": {
+      "name": "Arlington",
+      "county_id": "25017"
+    },
+    "11": {
+      "name": "Ashburnham",
+      "county_id": "25027"
+    },
+    "12": {
+      "name": "Ashby",
+      "county_id": "25017"
+    },
+    "13": {
+      "name": "Ashfield",
+      "county_id": "25011"
+    },
+    "14": {
+      "name": "Ashland",
+      "county_id": "25017"
+    },
+    "15": {
+      "name": "Athol",
+      "county_id": "25027"
+    },
+    "16": {
+      "name": "Attleboro",
+      "county_id": "25005"
+    },
+    "17": {
+      "name": "Auburn",
+      "county_id": "25027"
+    },
+    "18": {
+      "name": "Avon",
+      "county_id": "25021"
+    },
+    "19": {
+      "name": "Ayer",
+      "county_id": "25017"
+    },
+    "20": {
+      "name": "Barnstable",
+      "county_id": "25001"
+    },
+    "21": {
+      "name": "Barre",
+      "county_id": "25027"
+    },
+    "22": {
+      "name": "Becket",
+      "county_id": "25003"
+    },
+    "23": {
+      "name": "Bedford",
+      "county_id": "25017"
+    },
+    "24": {
+      "name": "Belchertown",
+      "county_id": "25015"
+    },
+    "25": {
+      "name": "Bellingham",
+      "county_id": "25021"
+    },
+    "26": {
+      "name": "Belmont",
+      "county_id": "25017"
+    },
+    "27": {
+      "name": "Berkley",
+      "county_id": "25005"
+    },
+    "28": {
+      "name": "Berlin",
+      "county_id": "25027"
+    },
+    "29": {
+      "name": "Bernardston",
+      "county_id": "25011"
+    },
+    "30": {
+      "name": "Beverly",
+      "county_id": "25009"
+    },
+    "31": {
+      "name": "Billerica",
+      "county_id": "25017"
+    },
+    "32": {
+      "name": "Blackstone",
+      "county_id": "25027"
+    },
+    "33": {
+      "name": "Blandford",
+      "county_id": "25013"
+    },
+    "34": {
+      "name": "Bolton",
+      "county_id": "25027"
+    },
+    "35": {
+      "name": "Boston",
+      "county_id": "25025"
+    },
+    "36": {
+      "name": "Bourne",
+      "county_id": "25001"
+    },
+    "37": {
+      "name": "Boxborough",
+      "county_id": "25017"
+    },
+    "38": {
+      "name": "Boxford",
+      "county_id": "25009"
+    },
+    "39": {
+      "name": "Boylston",
+      "county_id": "25027"
+    },
+    "40": {
+      "name": "Braintree",
+      "county_id": "25021"
+    },
+    "41": {
+      "name": "Brewster",
+      "county_id": "25001"
+    },
+    "42": {
+      "name": "Bridgewater",
+      "county_id": "25023"
+    },
+    "43": {
+      "name": "Brimfield",
+      "county_id": "25013"
+    },
+    "44": {
+      "name": "Brockton",
+      "county_id": "25023"
+    },
+    "45": {
+      "name": "Brookfield",
+      "county_id": "25027"
+    },
+    "46": {
+      "name": "Brookline",
+      "county_id": "25021"
+    },
+    "47": {
+      "name": "Buckland",
+      "county_id": "25011"
+    },
+    "48": {
+      "name": "Burlington",
+      "county_id": "25017"
+    },
+    "49": {
+      "name": "Cambridge",
+      "county_id": "25017"
+    },
+    "50": {
+      "name": "Canton",
+      "county_id": "25021"
+    },
+    "51": {
+      "name": "Carlisle",
+      "county_id": "25017"
+    },
+    "52": {
+      "name": "Carver",
+      "county_id": "25023"
+    },
+    "53": {
+      "name": "Charlemont",
+      "county_id": "25011"
+    },
+    "54": {
+      "name": "Charlton",
+      "county_id": "25027"
+    },
+    "55": {
+      "name": "Chatham",
+      "county_id": "25001"
+    },
+    "56": {
+      "name": "Chelmsford",
+      "county_id": "25017"
+    },
+    "57": {
+      "name": "Chelsea",
+      "county_id": "25025"
+    },
+    "58": {
+      "name": "Cheshire",
+      "county_id": "25003"
+    },
+    "59": {
+      "name": "Chester",
+      "county_id": "25013"
+    },
+    "60": {
+      "name": "Chesterfield",
+      "county_id": "25015"
+    },
+    "61": {
+      "name": "Chicopee",
+      "county_id": "25013"
+    },
+    "62": {
+      "name": "Chilmark",
+      "county_id": "25007"
+    },
+    "63": {
+      "name": "Clarksburg",
+      "county_id": "25003"
+    },
+    "64": {
+      "name": "Clinton",
+      "county_id": "25027"
+    },
+    "65": {
+      "name": "Cohasset",
+      "county_id": "25021"
+    },
+    "66": {
+      "name": "Colrain",
+      "county_id": "25011"
+    },
+    "67": {
+      "name": "Concord",
+      "county_id": "25017"
+    },
+    "68": {
+      "name": "Conway",
+      "county_id": "25011"
+    },
+    "69": {
+      "name": "Cummington",
+      "county_id": "25015"
+    },
+    "70": {
+      "name": "Dalton",
+      "county_id": "25003"
+    },
+    "71": {
+      "name": "Danvers",
+      "county_id": "25009"
+    },
+    "72": {
+      "name": "Dartmouth",
+      "county_id": "25005"
+    },
+    "73": {
+      "name": "Dedham",
+      "county_id": "25021"
+    },
+    "74": {
+      "name": "Deerfield",
+      "county_id": "25011"
+    },
+    "75": {
+      "name": "Dennis",
+      "county_id": "25001"
+    },
+    "76": {
+      "name": "Dighton",
+      "county_id": "25005"
+    },
+    "77": {
+      "name": "Douglas",
+      "county_id": "25027"
+    },
+    "78": {
+      "name": "Dover",
+      "county_id": "25021"
+    },
+    "79": {
+      "name": "Dracut",
+      "county_id": "25017"
+    },
+    "80": {
+      "name": "Dudley",
+      "county_id": "25027"
+    },
+    "81": {
+      "name": "Dunstable",
+      "county_id": "25017"
+    },
+    "82": {
+      "name": "Duxbury",
+      "county_id": "25023"
+    },
+    "83": {
+      "name": "East Bridgewater",
+      "county_id": "25023"
+    },
+    "84": {
+      "name": "East Brookfield",
+      "county_id": "25027"
+    },
+    "85": {
+      "name": "East Longmeadow",
+      "county_id": "25013"
+    },
+    "86": {
+      "name": "Eastham",
+      "county_id": "25001"
+    },
+    "87": {
+      "name": "Easthampton",
+      "county_id": "25015"
+    },
+    "88": {
+      "name": "Easton",
+      "county_id": "25005"
+    },
+    "89": {
+      "name": "Edgartown",
+      "county_id": "25007"
+    },
+    "90": {
+      "name": "Egremont",
+      "county_id": "25003"
+    },
+    "91": {
+      "name": "Erving",
+      "county_id": "25011"
+    },
+    "92": {
+      "name": "Essex",
+      "county_id": "25009"
+    },
+    "93": {
+      "name": "Everett",
+      "county_id": "25017"
+    },
+    "94": {
+      "name": "Fairhaven",
+      "county_id": "25005"
+    },
+    "95": {
+      "name": "Fall River",
+      "county_id": "25005"
+    },
+    "96": {
+      "name": "Falmouth",
+      "county_id": "25001"
+    },
+    "97": {
+      "name": "Fitchburg",
+      "county_id": "25027"
+    },
+    "98": {
+      "name": "Florida",
+      "county_id": "25003"
+    },
+    "99": {
+      "name": "Foxborough",
+      "county_id": "25021"
+    },
+    "100": {
+      "name": "Framingham",
+      "county_id": "25017"
+    },
+    "101": {
+      "name": "Franklin",
+      "county_id": "25021"
+    },
+    "102": {
+      "name": "Freetown",
+      "county_id": "25005"
+    },
+    "103": {
+      "name": "Gardner",
+      "county_id": "25027"
+    },
+    "105": {
+      "name": "Georgetown",
+      "county_id": "25009"
+    },
+    "106": {
+      "name": "Gill",
+      "county_id": "25011"
+    },
+    "107": {
+      "name": "Gloucester",
+      "county_id": "25009"
+    },
+    "108": {
+      "name": "Goshen",
+      "county_id": "25015"
+    },
+    "109": {
+      "name": "Gosnold",
+      "county_id": "25007"
+    },
+    "110": {
+      "name": "Grafton",
+      "county_id": "25027"
+    },
+    "111": {
+      "name": "Granby",
+      "county_id": "25015"
+    },
+    "112": {
+      "name": "Granville",
+      "county_id": "25013"
+    },
+    "113": {
+      "name": "Great Barrington",
+      "county_id": "25003"
+    },
+    "114": {
+      "name": "Greenfield",
+      "county_id": "25011"
+    },
+    "115": {
+      "name": "Groton",
+      "county_id": "25017"
+    },
+    "116": {
+      "name": "Groveland",
+      "county_id": "25009"
+    },
+    "117": {
+      "name": "Hadley",
+      "county_id": "25015"
+    },
+    "118": {
+      "name": "Halifax",
+      "county_id": "25023"
+    },
+    "119": {
+      "name": "Hamilton",
+      "county_id": "25009"
+    },
+    "120": {
+      "name": "Hampden",
+      "county_id": "25013"
+    },
+    "121": {
+      "name": "Hancock",
+      "county_id": "25003"
+    },
+    "122": {
+      "name": "Hanover",
+      "county_id": "25023"
+    },
+    "123": {
+      "name": "Hanson",
+      "county_id": "25023"
+    },
+    "124": {
+      "name": "Hardwick",
+      "county_id": "25027"
+    },
+    "125": {
+      "name": "Harvard",
+      "county_id": "25027"
+    },
+    "126": {
+      "name": "Harwich",
+      "county_id": "25001"
+    },
+    "127": {
+      "name": "Hatfield",
+      "county_id": "25015"
+    },
+    "128": {
+      "name": "Haverhill",
+      "county_id": "25009"
+    },
+    "129": {
+      "name": "Hawley",
+      "county_id": "25011"
+    },
+    "130": {
+      "name": "Heath",
+      "county_id": "25011"
+    },
+    "131": {
+      "name": "Hingham",
+      "county_id": "25023"
+    },
+    "132": {
+      "name": "Hinsdale",
+      "county_id": "25003"
+    },
+    "133": {
+      "name": "Holbrook",
+      "county_id": "25021"
+    },
+    "134": {
+      "name": "Holden",
+      "county_id": "25027"
+    },
+    "135": {
+      "name": "Holland",
+      "county_id": "25013"
+    },
+    "136": {
+      "name": "Holliston",
+      "county_id": "25017"
+    },
+    "137": {
+      "name": "Holyoke",
+      "county_id": "25013"
+    },
+    "138": {
+      "name": "Hopedale",
+      "county_id": "25027"
+    },
+    "139": {
+      "name": "Hopkinton",
+      "county_id": "25017"
+    },
+    "140": {
+      "name": "Hubbardston",
+      "county_id": "25027"
+    },
+    "141": {
+      "name": "Hudson",
+      "county_id": "25017"
+    },
+    "142": {
+      "name": "Hull",
+      "county_id": "25023"
+    },
+    "143": {
+      "name": "Huntington",
+      "county_id": "25015"
+    },
+    "144": {
+      "name": "Ipswich",
+      "county_id": "25009"
+    },
+    "145": {
+      "name": "Kingston",
+      "county_id": "25023"
+    },
+    "146": {
+      "name": "Lakeville",
+      "county_id": "25023"
+    },
+    "147": {
+      "name": "Lancaster",
+      "county_id": "25027"
+    },
+    "148": {
+      "name": "Lanesborough",
+      "county_id": "25003"
+    },
+    "149": {
+      "name": "Lawrence",
+      "county_id": "25009"
+    },
+    "150": {
+      "name": "Lee",
+      "county_id": "25003"
+    },
+    "151": {
+      "name": "Leicester",
+      "county_id": "25027"
+    },
+    "152": {
+      "name": "Lenox",
+      "county_id": "25003"
+    },
+    "153": {
+      "name": "Leominster",
+      "county_id": "25027"
+    },
+    "154": {
+      "name": "Leverett",
+      "county_id": "25011"
+    },
+    "155": {
+      "name": "Lexington",
+      "county_id": "25017"
+    },
+    "156": {
+      "name": "Leyden",
+      "county_id": "25011"
+    },
+    "157": {
+      "name": "Lincoln",
+      "county_id": "25017"
+    },
+    "158": {
+      "name": "Littleton",
+      "county_id": "25017"
+    },
+    "159": {
+      "name": "Longmeadow",
+      "county_id": "25013"
+    },
+    "160": {
+      "name": "Lowell",
+      "county_id": "25017"
+    },
+    "161": {
+      "name": "Ludlow",
+      "county_id": "25013"
+    },
+    "162": {
+      "name": "Lunenburg",
+      "county_id": "25027"
+    },
+    "163": {
+      "name": "Lynn",
+      "county_id": "25009"
+    },
+    "164": {
+      "name": "Lynnfield",
+      "county_id": "25009"
+    },
+    "165": {
+      "name": "Malden",
+      "county_id": "25017"
+    },
+    "166": {
+      "name": "Manchester-by-the-Sea",
+      "county_id": "25009"
+    },
+    "167": {
+      "name": "Mansfield",
+      "county_id": "25005"
+    },
+    "168": {
+      "name": "Marblehead",
+      "county_id": "25009"
+    },
+    "169": {
+      "name": "Marion",
+      "county_id": "25023"
+    },
+    "170": {
+      "name": "Marlborough",
+      "county_id": "25017"
+    },
+    "171": {
+      "name": "Marshfield",
+      "county_id": "25023"
+    },
+    "172": {
+      "name": "Mashpee",
+      "county_id": "25001"
+    },
+    "173": {
+      "name": "Mattapoisett",
+      "county_id": "25023"
+    },
+    "174": {
+      "name": "Maynard",
+      "county_id": "25017"
+    },
+    "175": {
+      "name": "Medfield",
+      "county_id": "25021"
+    },
+    "176": {
+      "name": "Medford",
+      "county_id": "25017"
+    },
+    "177": {
+      "name": "Medway",
+      "county_id": "25021"
+    },
+    "178": {
+      "name": "Melrose",
+      "county_id": "25017"
+    },
+    "179": {
+      "name": "Mendon",
+      "county_id": "25027"
+    },
+    "180": {
+      "name": "Merrimac",
+      "county_id": "25009"
+    },
+    "181": {
+      "name": "Methuen",
+      "county_id": "25009"
+    },
+    "182": {
+      "name": "Middleborough",
+      "county_id": "25023"
+    },
+    "183": {
+      "name": "Middlefield",
+      "county_id": "25015"
+    },
+    "184": {
+      "name": "Middleton",
+      "county_id": "25009"
+    },
+    "185": {
+      "name": "Milford",
+      "county_id": "25027"
+    },
+    "186": {
+      "name": "Millbury",
+      "county_id": "25027"
+    },
+    "187": {
+      "name": "Millis",
+      "county_id": "25021"
+    },
+    "188": {
+      "name": "Millville",
+      "county_id": "25027"
+    },
+    "189": {
+      "name": "Milton",
+      "county_id": "25021"
+    },
+    "190": {
+      "name": "Monroe",
+      "county_id": "25011"
+    },
+    "191": {
+      "name": "Monson",
+      "county_id": "25013"
+    },
+    "192": {
+      "name": "Montague",
+      "county_id": "25011"
+    },
+    "193": {
+      "name": "Monterey",
+      "county_id": "25003"
+    },
+    "194": {
+      "name": "Montgomery",
+      "county_id": "25013"
+    },
+    "195": {
+      "name": "Mount Washington",
+      "county_id": "25003"
+    },
+    "196": {
+      "name": "Nahant",
+      "county_id": "25009"
+    },
+    "197": {
+      "name": "Nantucket",
+      "county_id": "25019"
+    },
+    "198": {
+      "name": "Natick",
+      "county_id": "25017"
+    },
+    "199": {
+      "name": "Needham",
+      "county_id": "25021"
+    },
+    "200": {
+      "name": "New Ashford",
+      "county_id": "25003"
+    },
+    "201": {
+      "name": "New Bedford",
+      "county_id": "25005"
+    },
+    "202": {
+      "name": "New Braintree",
+      "county_id": "25027"
+    },
+    "203": {
+      "name": "New Marlborough",
+      "county_id": "25003"
+    },
+    "204": {
+      "name": "New Salem",
+      "county_id": "25011"
+    },
+    "205": {
+      "name": "Newbury",
+      "county_id": "25009"
+    },
+    "206": {
+      "name": "Newburyport",
+      "county_id": "25009"
+    },
+    "207": {
+      "name": "Newton",
+      "county_id": "25017"
+    },
+    "208": {
+      "name": "Norfolk",
+      "county_id": "25021"
+    },
+    "209": {
+      "name": "North Adams",
+      "county_id": "25003"
+    },
+    "210": {
+      "name": "North Andover",
+      "county_id": "25009"
+    },
+    "211": {
+      "name": "North Attleborough",
+      "county_id": "25005"
+    },
+    "212": {
+      "name": "North Brookfield",
+      "county_id": "25027"
+    },
+    "213": {
+      "name": "North Reading",
+      "county_id": "25017"
+    },
+    "214": {
+      "name": "Northampton",
+      "county_id": "25015"
+    },
+    "215": {
+      "name": "Northborough",
+      "county_id": "25027"
+    },
+    "216": {
+      "name": "Northbridge",
+      "county_id": "25027"
+    },
+    "217": {
+      "name": "Northfield",
+      "county_id": "25011"
+    },
+    "218": {
+      "name": "Norton",
+      "county_id": "25005"
+    },
+    "219": {
+      "name": "Norwell",
+      "county_id": "25023"
+    },
+    "220": {
+      "name": "Norwood",
+      "county_id": "25021"
+    },
+    "221": {
+      "name": "Oak Bluffs",
+      "county_id": "25007"
+    },
+    "222": {
+      "name": "Oakham",
+      "county_id": "25027"
+    },
+    "223": {
+      "name": "Orange",
+      "county_id": "25011"
+    },
+    "224": {
+      "name": "Orleans",
+      "county_id": "25001"
+    },
+    "225": {
+      "name": "Otis",
+      "county_id": "25003"
+    },
+    "226": {
+      "name": "Oxford",
+      "county_id": "25027"
+    },
+    "227": {
+      "name": "Palmer",
+      "county_id": "25013"
+    },
+    "228": {
+      "name": "Paxton",
+      "county_id": "25027"
+    },
+    "229": {
+      "name": "Peabody",
+      "county_id": "25009"
+    },
+    "230": {
+      "name": "Pelham",
+      "county_id": "25015"
+    },
+    "231": {
+      "name": "Pembroke",
+      "county_id": "25023"
+    },
+    "232": {
+      "name": "Pepperell",
+      "county_id": "25017"
+    },
+    "233": {
+      "name": "Peru",
+      "county_id": "25003"
+    },
+    "234": {
+      "name": "Petersham",
+      "county_id": "25027"
+    },
+    "235": {
+      "name": "Phillipston",
+      "county_id": "25027"
+    },
+    "236": {
+      "name": "Pittsfield",
+      "county_id": "25003"
+    },
+    "237": {
+      "name": "Plainfield",
+      "county_id": "25015"
+    },
+    "238": {
+      "name": "Plainville",
+      "county_id": "25021"
+    },
+    "239": {
+      "name": "Plymouth",
+      "county_id": "25023"
+    },
+    "240": {
+      "name": "Plympton",
+      "county_id": "25023"
+    },
+    "241": {
+      "name": "Princeton",
+      "county_id": "25027"
+    },
+    "242": {
+      "name": "Provincetown",
+      "county_id": "25001"
+    },
+    "243": {
+      "name": "Quincy",
+      "county_id": "25021"
+    },
+    "244": {
+      "name": "Randolph",
+      "county_id": "25021"
+    },
+    "245": {
+      "name": "Raynham",
+      "county_id": "25005"
+    },
+    "246": {
+      "name": "Reading",
+      "county_id": "25017"
+    },
+    "247": {
+      "name": "Rehoboth",
+      "county_id": "25005"
+    },
+    "248": {
+      "name": "Revere",
+      "county_id": "25025"
+    },
+    "249": {
+      "name": "Richmond",
+      "county_id": "25003"
+    },
+    "250": {
+      "name": "Rochester",
+      "county_id": "25023"
+    },
+    "251": {
+      "name": "Rockland",
+      "county_id": "25023"
+    },
+    "252": {
+      "name": "Rockport",
+      "county_id": "25009"
+    },
+    "253": {
+      "name": "Rowe",
+      "county_id": "25011"
+    },
+    "254": {
+      "name": "Rowley",
+      "county_id": "25009"
+    },
+    "255": {
+      "name": "Royalston",
+      "county_id": "25027"
+    },
+    "256": {
+      "name": "Russell",
+      "county_id": "25013"
+    },
+    "257": {
+      "name": "Rutland",
+      "county_id": "25027"
+    },
+    "258": {
+      "name": "Salem",
+      "county_id": "25009"
+    },
+    "259": {
+      "name": "Salisbury",
+      "county_id": "25009"
+    },
+    "260": {
+      "name": "Sandisfield",
+      "county_id": "25003"
+    },
+    "261": {
+      "name": "Sandwich",
+      "county_id": "25001"
+    },
+    "262": {
+      "name": "Saugus",
+      "county_id": "25009"
+    },
+    "263": {
+      "name": "Savoy",
+      "county_id": "25003"
+    },
+    "264": {
+      "name": "Scituate",
+      "county_id": "25023"
+    },
+    "265": {
+      "name": "Seekonk",
+      "county_id": "25005"
+    },
+    "266": {
+      "name": "Sharon",
+      "county_id": "25021"
+    },
+    "267": {
+      "name": "Sheffield",
+      "county_id": "25003"
+    },
+    "268": {
+      "name": "Shelburne",
+      "county_id": "25011"
+    },
+    "269": {
+      "name": "Sherborn",
+      "county_id": "25017"
+    },
+    "270": {
+      "name": "Shirley",
+      "county_id": "25017"
+    },
+    "271": {
+      "name": "Shrewsbury",
+      "county_id": "25027"
+    },
+    "272": {
+      "name": "Shutesbury",
+      "county_id": "25011"
+    },
+    "273": {
+      "name": "Somerset",
+      "county_id": "25005"
+    },
+    "274": {
+      "name": "Somerville",
+      "county_id": "25017"
+    },
+    "275": {
+      "name": "South Hadley",
+      "county_id": "25015"
+    },
+    "276": {
+      "name": "Southampton",
+      "county_id": "25015"
+    },
+    "277": {
+      "name": "Southborough",
+      "county_id": "25027"
+    },
+    "278": {
+      "name": "Southbridge",
+      "county_id": "25027"
+    },
+    "279": {
+      "name": "Southwick",
+      "county_id": "25013"
+    },
+    "280": {
+      "name": "Spencer",
+      "county_id": "25027"
+    },
+    "281": {
+      "name": "Springfield",
+      "county_id": "25013"
+    },
+    "282": {
+      "name": "Sterling",
+      "county_id": "25027"
+    },
+    "283": {
+      "name": "Stockbridge",
+      "county_id": "25003"
+    },
+    "284": {
+      "name": "Stoneham",
+      "county_id": "25017"
+    },
+    "285": {
+      "name": "Stoughton",
+      "county_id": "25021"
+    },
+    "286": {
+      "name": "Stow",
+      "county_id": "25017"
+    },
+    "287": {
+      "name": "Sturbridge",
+      "county_id": "25027"
+    },
+    "288": {
+      "name": "Sudbury",
+      "county_id": "25017"
+    },
+    "289": {
+      "name": "Sunderland",
+      "county_id": "25011"
+    },
+    "290": {
+      "name": "Sutton",
+      "county_id": "25027"
+    },
+    "291": {
+      "name": "Swampscott",
+      "county_id": "25009"
+    },
+    "292": {
+      "name": "Swansea",
+      "county_id": "25005"
+    },
+    "293": {
+      "name": "Taunton",
+      "county_id": "25005"
+    },
+    "294": {
+      "name": "Templeton",
+      "county_id": "25027"
+    },
+    "295": {
+      "name": "Tewksbury",
+      "county_id": "25017"
+    },
+    "296": {
+      "name": "Tisbury",
+      "county_id": "25007"
+    },
+    "297": {
+      "name": "Tolland",
+      "county_id": "25013"
+    },
+    "298": {
+      "name": "Topsfield",
+      "county_id": "25009"
+    },
+    "299": {
+      "name": "Townsend",
+      "county_id": "25017"
+    },
+    "300": {
+      "name": "Truro",
+      "county_id": "25001"
+    },
+    "301": {
+      "name": "Tyngsborough",
+      "county_id": "25017"
+    },
+    "302": {
+      "name": "Tyringham",
+      "county_id": "25003"
+    },
+    "303": {
+      "name": "Upton",
+      "county_id": "25027"
+    },
+    "304": {
+      "name": "Uxbridge",
+      "county_id": "25027"
+    },
+    "305": {
+      "name": "Wakefield",
+      "county_id": "25017"
+    },
+    "306": {
+      "name": "Wales",
+      "county_id": "25013"
+    },
+    "307": {
+      "name": "Walpole",
+      "county_id": "25021"
+    },
+    "308": {
+      "name": "Waltham",
+      "county_id": "25017"
+    },
+    "309": {
+      "name": "Ware",
+      "county_id": "25015"
+    },
+    "310": {
+      "name": "Wareham",
+      "county_id": "25023"
+    },
+    "311": {
+      "name": "Warren",
+      "county_id": "25027"
+    },
+    "312": {
+      "name": "Warwick",
+      "county_id": "25011"
+    },
+    "313": {
+      "name": "Washington",
+      "county_id": "25003"
+    },
+    "314": {
+      "name": "Watertown",
+      "county_id": "25017"
+    },
+    "315": {
+      "name": "Wayland",
+      "county_id": "25017"
+    },
+    "316": {
+      "name": "Webster",
+      "county_id": "25027"
+    },
+    "317": {
+      "name": "Wellesley",
+      "county_id": "25021"
+    },
+    "318": {
+      "name": "Wellfleet",
+      "county_id": "25001"
+    },
+    "319": {
+      "name": "Wendell",
+      "county_id": "25011"
+    },
+    "320": {
+      "name": "Wenham",
+      "county_id": "25009"
+    },
+    "321": {
+      "name": "West Boylston",
+      "county_id": "25027"
+    },
+    "322": {
+      "name": "West Bridgewater",
+      "county_id": "25023"
+    },
+    "323": {
+      "name": "West Brookfield",
+      "county_id": "25027"
+    },
+    "324": {
+      "name": "West Newbury",
+      "county_id": "25009"
+    },
+    "325": {
+      "name": "West Springfield",
+      "county_id": "25013"
+    },
+    "326": {
+      "name": "West Stockbridge",
+      "county_id": "25003"
+    },
+    "327": {
+      "name": "West Tisbury",
+      "county_id": "25007"
+    },
+    "328": {
+      "name": "Westborough",
+      "county_id": "25027"
+    },
+    "329": {
+      "name": "Westfield",
+      "county_id": "25013"
+    },
+    "330": {
+      "name": "Westford",
+      "county_id": "25017"
+    },
+    "331": {
+      "name": "Westhampton",
+      "county_id": "25015"
+    },
+    "332": {
+      "name": "Westminster",
+      "county_id": "25027"
+    },
+    "333": {
+      "name": "Weston",
+      "county_id": "25017"
+    },
+    "334": {
+      "name": "Westport",
+      "county_id": "25005"
+    },
+    "335": {
+      "name": "Westwood",
+      "county_id": "25021"
+    },
+    "336": {
+      "name": "Weymouth",
+      "county_id": "25021"
+    },
+    "337": {
+      "name": "Whately",
+      "county_id": "25011"
+    },
+    "338": {
+      "name": "Whitman",
+      "county_id": "25023"
+    },
+    "339": {
+      "name": "Wilbraham",
+      "county_id": "25013"
+    },
+    "340": {
+      "name": "Williamsburg",
+      "county_id": "25015"
+    },
+    "341": {
+      "name": "Williamstown",
+      "county_id": "25003"
+    },
+    "342": {
+      "name": "Wilmington",
+      "county_id": "25017"
+    },
+    "343": {
+      "name": "Winchendon",
+      "county_id": "25027"
+    },
+    "344": {
+      "name": "Winchester",
+      "county_id": "25017"
+    },
+    "345": {
+      "name": "Windsor",
+      "county_id": "25003"
+    },
+    "346": {
+      "name": "Winthrop",
+      "county_id": "25025"
+    },
+    "347": {
+      "name": "Woburn",
+      "county_id": "25017"
+    },
+    "348": {
+      "name": "Worcester",
+      "county_id": "25027"
+    },
+    "349": {
+      "name": "Worthington",
+      "county_id": "25015"
+    },
+    "350": {
+      "name": "Wrentham",
+      "county_id": "25021"
+    },
+    "351": {
+      "name": "Yarmouth",
+      "county_id": "25001"
+    }
+  },
+  "cbsa": {
+    "11200": {
+      "name": "Amherst Town-Northampton, MA Metro Area"
+    },
+    "12700": {
+      "name": "Barnstable Town, MA Metro Area"
+    },
+    "14460": {
+      "name": "Boston-Cambridge-Newton, MA-NH Metro Area"
+    },
+    "24640": {
+      "name": "Greenfield, MA Micro Area"
+    },
+    "34880": {
+      "name": "Nantucket, MA Micro Area"
+    },
+    "38340": {
+      "name": "Pittsfield, MA Metro Area"
+    },
+    "39300": {
+      "name": "Providence-Warwick, RI-MA Metro Area"
+    },
+    "44140": {
+      "name": "Springfield, MA Metro Area"
+    },
+    "47240": {
+      "name": "Vineyard Haven, MA Micro Area"
+    },
+    "49340": {
+      "name": "Worcester, MA Metro Area"
+    }
+  }
+}

@@ -8,7 +8,7 @@ succeeds.
 
 import json
 
-from ma_geo import sources
+from ma_geo import contract, sources
 from ma_geo.paths import OUT_DIR
 
 LAYERS = ("county", "municipality", "cbsa")
@@ -33,6 +33,7 @@ def load_published() -> dict:
         "municipality.geojson",
         "cbsa.geojson",
         "assignments.json",
+        "area.json",
         "provenance.json",
     ):
         path = OUT_DIR / name
@@ -245,6 +246,8 @@ def run_validate() -> int:
     print("  every area in every layer is a key in the index")
     check_assignments_index(index, campus_features)
     print("  the index agrees with the campus properties")
+    contract.check_contract(published)
+    print("  the published fields and identifiers the page reads are intact")
     outline = check_shared_outline(published)
     print(
         f"  the three layers share one outline (worst difference "

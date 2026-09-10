@@ -407,6 +407,33 @@ def build_assignments_index(
     return index
 
 
+def build_area_index(published: dict[str, "gpd.GeoDataFrame"]) -> dict:
+    """Area display names, so a consumer can name a campus's geographies.
+
+    A name is otherwise published only inside its layer's geometry file, and
+    a page that names a campus's county in a table would have to fetch all
+    three layers to read it. This index is small enough to fetch eagerly.
+    The campus `city` attribute is not a substitute: it is the mailing city,
+    which names a different place than the assigned municipality for 18 of
+    the 206 campuses.
+    """
+    index: dict[str, dict] = {}
+    for layer in ("county", "municipality", "cbsa"):
+        frame = published[layer]
+        entries = {}
+        for row in frame.itertuples():
+            entry = {"name": row.name}
+            if layer == "municipality":
+                entry["county_id"] = row.county_id
+            entries[str(row.area_id)] = entry
+        # Sorted by name so the file reads in the order a reader expects and
+        # a diff stays legible when one area is renamed upstream.
+        index[layer] = dict(
+            sorted(entries.items(), key=lambda item: item[1]["name"])
+        )
+    return index
+
+
 def municipality_discrepancies(
     campuses: gpd.GeoDataFrame,
     assignment: pd.DataFrame,
@@ -578,6 +605,7 @@ def run_build(tolerance: float | None = None) -> int:
         published = frame.drop(columns=["county_name"], errors="ignore")
         rendered[f"{name}.geojson"] = render_geojson(_features(published))
     rendered["assignments.json"] = render_json(index)
+    rendered["area.json"] = render_json(build_area_index(simplified))
 
     sizes = {name: byte_size(text) for name, text in rendered.items()}
 
@@ -657,6 +685,7 @@ def build_provenance(
                 "bytes": sizes.get("cbsa.geojson"),
             },
             "assignments.json": {"bytes": sizes.get("assignments.json")},
+            "area.json": {"bytes": sizes.get("area.json")},
         },
         "institution_count": institution_count,
         "simplification": {
