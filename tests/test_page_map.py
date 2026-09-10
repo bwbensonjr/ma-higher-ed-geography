@@ -34,7 +34,7 @@ def test_tiles_load_and_render_at_the_closest_zoom(tiled_driver):
     assert deep > 0, "the closest zoom rendered no tiles"
 
 
-def test_the_tile_layer_is_configured_for_carto_positron_to_street_level(driver):
+def test_the_tile_layer_is_configured_keyless_to_street_level(driver):
     driver.open()
     config = driver.page.evaluate(
         """async () => {
@@ -44,9 +44,13 @@ def test_the_tile_layer_is_configured_for_carto_positron_to_street_level(driver)
                      minZoom: window.maGeo.map.map.getMinZoom() };
         }"""
     )
-    assert "basemaps.cartocdn.com" in config["url"]
-    assert "light_all" in config["url"]
-    assert "CARTO" in config["attribution"]
+    assert "server.arcgisonline.com" in config["url"]
+    assert "World_Light_Gray_Base" in config["url"]
+    # No API key, no token, no account parameter: a public static page
+    # cannot keep a secret, and a keyed provider serves placeholder tiles.
+    assert "key" not in config["url"].lower()
+    assert "token" not in config["url"].lower()
+    assert "Esri" in config["attribution"]
     assert "OpenStreetMap" in config["attribution"]
     assert config["maxZoom"] >= 19
     assert config["minZoom"] <= 8
@@ -234,3 +238,95 @@ def test_a_marker_is_distinguishable_at_both_zooms(tiled_driver):
     )
     driver.settle(1500)
     assert marker_pixels() > 0, "no marker pixels at street zoom"
+
+
+@pytest.mark.tiles
+def test_the_tile_provider_serves_real_tiles_not_a_placeholder():
+    """The regression this suite missed once.
+
+    A provider that has started requiring an account answers every tile
+    request with HTTP 200 and the same "API KEY REQUIRED" watermark, so
+    nothing errors and the map looks broken only to a human -- which is how
+    CARTO Positron, this page's first basemap, failed. Tiles over three
+    different cities must therefore differ from one another.
+    """
+    import math
+    import urllib.request
+
+    from conftest import TILE_URL_TEMPLATE
+
+    def fetch(lat, lon, zoom=10):
+        n = 2 ** zoom
+        x = int((lon + 180.0) / 360.0 * n)
+        y = int((1.0 - math.asinh(math.tan(math.radians(lat))) / math.pi) / 2.0 * n)
+        request = urllib.request.Request(
+            TILE_URL_TEMPLATE.format(z=zoom, x=x, y=y),
+            headers={"User-Agent": "ma-higher-ed-geography verification suite"},
+        )
+        with urllib.request.urlopen(request, timeout=30) as response:
+            assert response.status == 200
+            return response.read()
+
+    # Built-up ground, where a real basemap has plenty to draw. Ocean tiles
+    # are legitimately identical, so they would prove nothing.
+    tiles = [
+        fetch(42.3601, -71.0589),  # Boston
+        fetch(42.2626, -71.8023),  # Worcester
+        fetch(42.1015, -72.5898),  # Springfield
+    ]
+    assert len({bytes(tile) for tile in tiles}) == 3, (
+        "tiles over three different cities came back identical, which is "
+        "what a placeholder or watermark tile looks like"
+    )
+    assert all(len(tile) > 3000 for tile in tiles), [len(t) for t in tiles]
+
+
+@pytest.mark.tiles
+def test_the_basemap_is_grey_and_upscales_past_its_native_ceiling(tiled_driver):
+    """Esri's light gray canvas stops at zoom 16; the map still reaches 19."""
+    driver = tiled_driver
+    driver.open()
+    driver.settle(1500)
+    config = driver.page.evaluate(
+        """async () => {
+            const m = await import('./modules/map.js');
+            let layer = null;
+            window.maGeo.map.map.eachLayer((candidate) => {
+                if (candidate._url && !layer) layer = candidate;
+            });
+            return { native: m.TILE_MAX_NATIVE_ZOOM,
+                     layerNative: layer.options.maxNativeZoom,
+                     layerMax: layer.options.maxZoom,
+                     mapMax: window.maGeo.map.map.getMaxZoom() };
+        }"""
+    )
+    assert config["native"] == 16
+    assert config["layerNative"] == 16
+    assert config["mapMax"] >= 19
+
+    # Past the ceiling the basemap upscales rather than going blank.
+    driver.page.evaluate(
+        """() => {
+            const campus = window.maGeo.indexes.campusById.get('williams-college');
+            window.maGeo.map.map.setView([campus.lat, campus.lon], 19);
+            return null;
+        }"""
+    )
+    driver.settle(2000)
+    decoded = driver.page.evaluate(
+        """() => [...document.querySelectorAll('.leaflet-tile')]
+            .filter(t => t.complete && t.naturalWidth > 0).length"""
+    )
+    assert decoded > 0, "the closest zoom rendered no tiles"
+
+    # And the markers keep their own colour over it.
+    colour = driver.page.evaluate(
+        """() => {
+            let found = null;
+            window.maGeo.map.map.eachLayer((layer) => {
+                if (layer.campusId && !found) found = layer.options.fillColor;
+            });
+            return found;
+        }"""
+    )
+    assert colour.lower() == "#e8442a"

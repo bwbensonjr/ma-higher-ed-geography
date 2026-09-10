@@ -8,6 +8,7 @@ See proposal.md - Why. The data side is done and archived: `docs/data/` holds 20
 - **Counts.** 206 campuses, 160 institutions. Per-area institution counts are non-additive and `provenance.json` carries the statewide 160.
 - **Hosting.** GitHub Pages serving `docs/` on the default branch. Static files only, no server, no build step at serve time, and this is a Python repository with no Node toolchain.
 - **Base map.** The page draws third-party tiles. That is a deliberate reversal of an earlier draft of this design, which had the page contact no host but its own origin and use the published geometry as its cartographic base; the cost was that a visitor zoomed into Boston saw a marker with no streets around it. Tiles buy that detail back, and the constraint that replaces the old one is narrower: the page's *data* still comes only from the repository, so tiles affect the backdrop and nothing the page reports.
+- **Keyless tiles only.** A public static page has nowhere to keep an API key, which decides the provider question before cartography does. See the basemap decision below, and the way the first choice failed.
 
 ## Goals / Non-Goals
 
@@ -37,13 +38,20 @@ Vendoring is still worth it now that the page calls a tile host anyway: the tile
 
 *Alternatives:* Leaflet from a pinned CDN URL - less committed code, but it turns a third-party outage into a total failure rather than a cosmetic one. A bundled front end (Vite) - more capable, but it adds an npm toolchain and a build artifact to a Python repository for a page of this size.
 
-### A light grey tile base map (CARTO Positron), drawn beneath everything
+### A light grey tile base map (Esri light gray canvas), drawn beneath everything
 
-The map draws CARTO's Positron tiles: muted grey streets with restrained labels, no API key, attribution to CARTO and OpenStreetMap. Chosen because this page's subject is shaded polygons with markers on top, and a colourful base map fights both. Positron is designed to sit under exactly this kind of overlay, which keeps the choropleth classes distinguishable and leaves the campus markers as the brightest thing on screen. Zoom runs to street level, which is the point of adopting tiles at all.
+The map draws Esri's World Light Gray Base: muted cartography by design, keyless, attributed to Esri and OpenStreetMap. Chosen because this page's subject is shaded polygons with markers on top, and a colourful base map fights both. A grey canvas keeps the choropleth classes distinguishable and leaves the campus markers the brightest thing on screen. Note Esri's `{z}/{y}/{x}` tile order, which is not the usual one.
+
+It renders only through zoom 16, so `maxNativeZoom` lets Leaflet upscale to the map's zoom 19 rather than leave the closest zooms blank. Past 16 the backdrop is therefore soft rather than sharp; street geometry and names are still legible, which is what a marker needs for context.
 
 The base map is required to be subordinate, not merely present, which is a real constraint on the polygon styling: area fills need enough opacity to read as classes over grey tiles without hiding the streets that justify having them.
 
-*Alternatives:* OpenStreetMap standard tiles - the richest detail and the most familiar look, but its greens, road colours, and dense labels compete with both the shading and the markers, and OSM's tile usage policy asks that sites of any real traffic not point at `tile.openstreetmap.org` directly. A switchable pair, grey by default with full-colour OSM on demand - genuinely useful when zoomed in, deferred because it adds a control and a requirement for a second basemap that can wait until the first one is on screen. Providers requiring an API key (Stadia, Mapbox, MapTiler) - better cartography, but a public static page cannot hold a secret, and a domain-restricted key is one more thing to administer for a repository like this. Self-hosted or vendored tiles - defeats the purpose; the whole point is detail the repository is not going to carry.
+**This decision was made twice.** The page first used CARTO Positron, which is the conventional choice for exactly this job. CARTO now stamps `API KEY REQUIRED` across keyless tiles and serves them with HTTP 200, so no tile error fires, no test fails, and the map looks broken only to a human looking at it. It was caught by opening the published page and looking. Two consequences worth keeping:
+
+- The suite now has a test that fetches tiles over three different cities and asserts they differ, because a watermark or placeholder is byte-identical everywhere. That is the shape of assertion a keyless third-party raster dependency needs; HTTP status is not enough.
+- A provider that needs an API key is not merely inconvenient for a public static page, it is unusable: there is nowhere to put the key. That rules out Stadia, Mapbox, and MapTiler as well, and it is why the keyless field is small.
+
+*Alternatives:* OpenStreetMap standard tiles, desaturated in CSS with a `grayscale` filter on the tile pane - keyless and sharp all the way to zoom 19, but the filter greys the labels too and the result is muddier than cartography drawn grey on purpose; OSM's tile usage policy also asks that sites of any real traffic not point at `tile.openstreetmap.org` directly. Full-colour OSM tiles undesaturated - the sharpest option, rejected because the colour competes with both the shading and the markers. Providers requiring an API key - see above. Self-hosted or vendored tiles - defeats the purpose; the whole point is detail the repository is not going to carry.
 
 ### Tile failure degrades the backdrop and nothing else
 
@@ -111,8 +119,9 @@ This keeps one test runner and one language for the repository's tooling.
 
 ## Risks / Trade-offs
 
-- **The base map is a third party the page depends on at load.** CARTO's basemaps are free to use with attribution and no key, but they carry no availability guarantee and the terms could change. Mitigation: tile failure is cosmetic by design and tested that way, and swapping providers is a URL and an attribution string, because nothing else in the page depends on which tiles arrive.
-- **Tile requests disclose each visitor's address and the area they are viewing to CARTO.** This is inherent to any third-party base map and is the concrete privacy cost of this decision. Mitigation: name the provider in the attribution so the disclosure is visible rather than hidden, and keep the page free of any other external request, so tiles remain the only thing a visitor's browser tells anyone else about.
+- **The base map is a third party the page depends on at load, and its terms can change under the page.** That is not hypothetical here: CARTO started requiring an account and the page's basemap silently became a watermark. Mitigation: swapping providers is a URL and an attribution string, because nothing else depends on which tiles arrive; tile failure is cosmetic by design; and the suite asserts the tiles are real rather than trusting HTTP 200. Anyone re-reading this should expect to do it again.
+- **Tile requests disclose each visitor's address and the area they are viewing to Esri.** This is inherent to any third-party base map and is the concrete privacy cost of this decision. Mitigation: name the provider in the attribution so the disclosure is visible rather than hidden, and keep the page free of any other external request, so tiles remain the only thing a visitor's browser tells anyone else about.
+- **The backdrop is soft past zoom 16.** Esri's grey canvas has no tiles beyond it, so the closest zooms are upscaled. Mitigation: `maxNativeZoom`, which keeps streets and names legible instead of blank; if sharpness at 19 ever matters more than a grey canvas, undesaturated OSM tiles are the trade.
 - **Shading over tiles can end up illegible.** Fill opacity that reads clearly on white can mud together over grey streets. Mitigation: the classes are chosen and checked against the actual basemap rather than on a blank background, and the spec requires the classes to stay distinguishable over the tiles.
 - **351 polygons plus 206 markers on a phone.** Mitigation: canvas renderer, already-simplified geometry, and the municipality layer fetched only on demand. If panning still stutters, the fallback is to draw only the areas intersecting the viewport, which needs no data change.
 - **The field names are now a two-way contract.** A rename in the pipeline breaks the page at load, and the page is not exercised by the pipeline's tests. Mitigation: this change's consumer-contract validation, which fails the run rather than publishing outputs the page cannot read.
@@ -129,5 +138,5 @@ Rollback is reverting the commit; the data files are unaffected by the page, and
 ## Open Questions
 
 - The exact choropleth break values per layer, and the fill opacity that keeps them legible over grey tiles, are worth tuning once the shading is on screen over the real basemap. This changes constants and a legend label, not the approach.
-- Whether to add the switchable full-colour basemap described above. Additive, and better judged with the grey one running.
+- Whether to offer a second, sharper basemap for the closest zooms, given Esri's zoom-16 ceiling. Additive, and better judged after using the grey one.
 - Whether to give the site a friendlier Pages domain than the default `*.github.io` URL. Independent of everything here and decidable after the page is live.

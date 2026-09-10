@@ -14,10 +14,24 @@ import { areaStyle, legendEntries } from "./shading.js";
 import { areaCounts, describeCounts } from "./counts.js";
 import { typeLabel } from "./rows.js";
 
-export const TILE_URL = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+// Esri's light gray canvas: muted cartography by design, keyless, so there
+// is no credential for a public static page to try to keep secret. Note the
+// {z}/{y}/{x} order, which is Esri's, not the usual {z}/{x}/{y}.
+//
+// Basemap history: this page started on CARTO Positron, which now stamps an
+// "API KEY REQUIRED" watermark across keyless tiles -- served with HTTP 200,
+// so nothing errors and the map looks broken only to a human. Esri's light
+// gray is the closest muted keyless equivalent. It renders only through zoom
+// 16, so TILE_MAX_NATIVE_ZOOM lets Leaflet upscale beyond that rather than
+// leave the closest zooms blank.
+export const TILE_URL =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/" +
+  "World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}";
 export const TILE_ATTRIBUTION =
+  'Tiles &copy; <a href="https://www.esri.com/">Esri</a> — Esri, HERE, Garmin, ' +
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
-  'contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>';
+  "contributors";
+export const TILE_MAX_NATIVE_ZOOM = 16;
 
 // The whole state, comfortably.
 export const MASSACHUSETTS_BOUNDS = [
@@ -46,9 +60,8 @@ export function createMap(container, { onSelectArea, onSelectCampus } = {}) {
 
   const tiles = L.tileLayer(TILE_URL, {
     attribution: TILE_ATTRIBUTION,
-    subdomains: "abcd",
     maxZoom: 19,
-    detectRetina: true,
+    maxNativeZoom: TILE_MAX_NATIVE_ZOOM,
     crossOrigin: true,
   });
   let tileErrors = 0;

@@ -26,9 +26,9 @@ The page fetches about 306 KB at load (the campus points, the assignment, the ar
 
 ### The base map
 
-Tiles come from [CARTO](https://carto.com/attributions) (their Positron style, over OpenStreetMap data), which is the page's one external dependency. Everything the page *reports* comes from this repository, so if the tile host is slow or blocked the map loses its backdrop and nothing else: markers, layers, selection, and the table all keep working. The test suite runs with the tile host blocked for exactly that reason.
+Tiles come from [Esri](https://www.esri.com/)'s light gray canvas (over Esri, HERE, Garmin, and OpenStreetMap data), which is the page's one external dependency. It is muted by design, so the area shading and the campus markers stay legible on top of it, and it needs no API key -- a public static page has nowhere to keep one. Its tiles stop at zoom 16, so the closest zooms are upscaled rather than blank. Everything the page *reports* comes from this repository, so if the tile host is slow or blocked the map loses its backdrop and nothing else: markers, layers, selection, and the table all keep working. The test suite runs with the tile host blocked for exactly that reason.
 
-Worth knowing: requesting tiles discloses each visitor's network address and the area they are looking at to CARTO. That is inherent to any hosted base map, and it is named in the page footer rather than left implicit. Leaflet itself is vendored into `docs/vendor/leaflet/` and pinned by checksum, so no third party serves the page's own code.
+Worth knowing: requesting tiles discloses each visitor's network address and the area they are looking at to Esri. That is inherent to any hosted base map, and it is named in the page footer rather than left implicit. Leaflet itself is vendored into `docs/vendor/leaflet/` and pinned by checksum, so no third party serves the page's own code.
 
 ## Geographic Resources 
 
@@ -49,6 +49,8 @@ uv run ma-geo build      # transform them into docs/data/
 uv run ma-geo validate   # check the published outputs
 uv run pytest            # run the verification suite (pipeline and page)
 ```
+
+One lesson is baked into the suite: the page first used CARTO Positron, which now answers keyless requests with an `API KEY REQUIRED` watermark served as HTTP 200 -- no error, no failing test, a map that looks broken only to a human. A test now fetches tiles over three cities and asserts they differ, because a placeholder is byte-identical everywhere.
 
 The page's own behavior is verified in a real browser: `pytest` serves `docs/` over a static server and drives Chromium through Playwright. Install the browser once with `uv run playwright install chromium`; without it those tests skip and the pipeline tests still run.
 

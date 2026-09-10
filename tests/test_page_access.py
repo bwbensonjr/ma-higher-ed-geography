@@ -226,20 +226,20 @@ def test_both_attributions_are_visible(driver):
     attribution = driver.text("#data-attribution")
     assert "MassGIS" in attribution
     assert "Census" in attribution
-    assert "CARTO" in attribution
+    assert "Esri" in attribution
     assert "OpenStreetMap" in attribution
     assert driver.page.locator("#data-attribution").is_visible()
 
     # Leaflet's own control carries the tile attribution on the map.
     control = driver.text(".leaflet-control-attribution")
-    assert "CARTO" in control
+    assert "Esri" in control
     assert "OpenStreetMap" in control
 
 
 def test_the_tile_provider_is_named_so_the_visitor_can_tell(driver):
     driver.open()
     footer = driver.page.locator(".page-footer").inner_text()
-    assert "CARTO" in footer
+    assert "Esri" in footer
     assert "network address" in footer.lower() or "discloses" in footer.lower()
 
 

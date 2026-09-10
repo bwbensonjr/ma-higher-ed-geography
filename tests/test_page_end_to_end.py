@@ -59,7 +59,7 @@ def test_the_only_foreign_requests_are_tiles(tiled_driver):
     driver.select_layer("county")
     driver.settle(900)
 
-    foreign = [url for url in driver.foreign_requests() if "cartocdn.com" not in url]
+    foreign = [url for url in driver.foreign_requests() if "arcgisonline.com" not in url]
     assert foreign == [], foreign
     assert len(driver.tile_requests()) > 0
 

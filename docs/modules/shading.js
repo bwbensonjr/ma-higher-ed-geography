@@ -29,6 +29,12 @@ export const EMPTY_COLOR = "#f2f2ef";
 export const FILL_OPACITY = 0.62;
 export const EMPTY_FILL_OPACITY = 0.28;
 
+// A selected area is already unmistakable from its outline and from its
+// dimmed neighbours, so its fill steps back: a visitor who has selected a
+// geography is looking *into* it, and an opaque fill would hide the streets
+// that are the reason for having a basemap at all.
+export const SELECTED_FILL_OPACITY = 0.24;
+
 /** -1 for an area with no campuses, otherwise the index into COLORS. */
 export function classIndex(layer, count) {
   const breaks = BREAKS[layer];
@@ -78,15 +84,14 @@ export function legendEntries(layer) {
 /** The Leaflet path style for one area. */
 export function areaStyle(layer, count, { selected = false, dimmed = false } = {}) {
   const empty = classIndex(layer, count) < 0;
+  let fillOpacity = empty ? EMPTY_FILL_OPACITY : FILL_OPACITY;
+  if (selected) fillOpacity = SELECTED_FILL_OPACITY;
+  if (dimmed) fillOpacity = 0.12;
   return {
     color: selected ? "#b8331f" : "#5a6472",
     weight: selected ? 3 : 0.7,
     opacity: dimmed ? 0.35 : 1,
     fillColor: colorFor(layer, count),
-    fillOpacity: dimmed
-      ? 0.12
-      : empty
-        ? EMPTY_FILL_OPACITY
-        : FILL_OPACITY,
+    fillOpacity,
   };
 }

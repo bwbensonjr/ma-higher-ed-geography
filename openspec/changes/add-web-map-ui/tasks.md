@@ -30,7 +30,8 @@
 
 ## 5. Map: base map, markers, and campus detail
 
-- [x] 5.1 Initialize the map with the canvas renderer, fitted to the state, and add the CARTO Positron tile layer beneath every other layer with its required CARTO and OpenStreetMap attribution and a zoom range from statewide to street level; verify with the tile host allowed that tiles load, that they render at the closest zoom rather than going blank, and that the tile layer sits beneath both the area layer and the markers.
+- [x] 5.1 Initialize the map with the canvas renderer, fitted to the state, and add a keyless light grey tile layer beneath every other layer with its required attribution and a zoom range from statewide to street level; verify with the tile host allowed that tiles load, that they render at the closest zoom rather than going blank, and that the tile layer sits beneath both the area layer and the markers. Esri's light gray canvas is the provider, with `maxNativeZoom` past its zoom-16 ceiling; CARTO Positron was tried first and serves an `API KEY REQUIRED` watermark with HTTP 200.
+- [x] 5.6 Assert the tile provider serves real tiles rather than a watermark or placeholder: fetch tiles over three different cities and verify they differ from one another, since a placeholder is byte-identical everywhere and arrives with HTTP 200, which is how the first provider's failure escaped both the error handler and the suite.
 - [x] 5.2 Render the 206 campuses as circle markers from the published coordinates; verify the map reports 206 markers and that an institution with seven campuses contributes seven of them.
 - [x] 5.3 Implement the campus popup with institution, campus, address, municipality, ZIP, telephone, type, category, degrees offered, and the website as a link; verify a known campus renders every field correctly.
 - [x] 5.4 Omit empty attributes from the popup; verify a campus with no campus name and no telephone renders neither label, and that no `null`, `undefined`, or empty-value placeholder appears anywhere in the popup markup.
@@ -98,7 +99,7 @@
 ## 14. Provenance and attribution
 
 - [x] 14.1 Render the sources and the preparation date from `provenance.json`; verify the displayed date and source titles match the file and that editing the file's `generated` date changes the page with no edit to the page.
-- [x] 14.2 Render the upstream attribution for the geography and campus sources alongside the base map's required CARTO and OpenStreetMap attribution; verify both are visible on the page, that the tile provider is named so its involvement is evident to a visitor, and that the data sources' attribution remains visible when the tile host is blocked.
+- [x] 14.2 Render the upstream attribution for the geography and campus sources alongside the base map's required Esri and OpenStreetMap attribution; verify both are visible on the page, that the tile provider is named so its involvement is evident to a visitor, and that the data sources' attribution remains visible when the tile host is blocked.
 
 ## 15. Verification and publication
 

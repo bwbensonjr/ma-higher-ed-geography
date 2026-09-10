@@ -21,7 +21,7 @@ def test_no_console_errors_on_load(driver):
         if message.type != "error":
             return
         origin = (message.location or {}).get("url", "")
-        if "cartocdn.com" in origin:
+        if "arcgisonline.com" in origin:
             return
         errors.append(f"{message.text} @ {origin}")
 
@@ -50,14 +50,12 @@ def test_the_recorder_reports_the_eager_files_and_separates_tiles(driver):
         "campus.geojson",
         "provenance.json",
     ]
-    assert driver.tile_requests() == [] or all(
-        "cartocdn" in url for url in driver.tile_requests()
-    )
+    assert all("arcgisonline.com" in url for url in driver.tile_requests())
     assert all(url.startswith(driver.site) for url in driver.same_origin_requests())
 
 
 def test_every_request_but_tiles_is_same_origin(driver):
     driver.open()
     driver.select_layer("county")
-    foreign = [url for url in driver.foreign_requests() if "cartocdn" not in url]
+    foreign = [url for url in driver.foreign_requests() if "arcgisonline.com" not in url]
     assert foreign == [], foreign

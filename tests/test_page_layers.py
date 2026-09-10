@@ -198,3 +198,30 @@ def test_hovering_an_area_reveals_its_name_and_both_counts(driver):
     assert str(tooltip["counts"]["campus_count"]) in tooltip["text"]
     assert str(tooltip["counts"]["institution_count"]) in tooltip["text"]
     assert "campuses" in tooltip["text"] and "institution" in tooltip["text"]
+
+
+def test_a_selected_area_lets_the_basemap_through(driver):
+    """Selecting a geography means looking into it, so its fill steps back."""
+    driver.open("/index.html#layer=county&area=25025")
+    driver.settle(800)
+    styles = driver.page.evaluate(
+        """async () => {
+            const m = await import('./modules/shading.js');
+            const out = { selected: null, dimmed: null, unselectedDefault:
+                m.areaStyle('county', 45).fillOpacity };
+            window.maGeo.map.map.eachLayer((layer) => {
+                if (!layer.feature || !layer.feature.properties.area_id) return;
+                const style = { fillOpacity: layer.options.fillOpacity,
+                                weight: layer.options.weight };
+                if (String(layer.feature.properties.area_id) === '25025') out.selected = style;
+                else if (!out.dimmed) out.dimmed = style;
+            });
+            return out;
+        }"""
+    )
+    # Sheer enough to see streets, still darker than its dimmed neighbours,
+    # and unmistakable from its outline.
+    assert styles["selected"]["fillOpacity"] < styles["unselectedDefault"]
+    assert styles["selected"]["fillOpacity"] > styles["dimmed"]["fillOpacity"]
+    assert styles["selected"]["weight"] > styles["dimmed"]["weight"]
+    assert styles["selected"]["fillOpacity"] <= 0.35

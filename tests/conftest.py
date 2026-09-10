@@ -16,7 +16,12 @@ import pytest
 from ma_geo.paths import REPO_ROOT
 
 DOCS_DIR = REPO_ROOT / "docs"
-TILE_HOST_PATTERN = "**basemaps.cartocdn.com/**"
+TILE_HOST = "server.arcgisonline.com"
+TILE_HOST_PATTERN = f"**{TILE_HOST}/**"
+TILE_URL_TEMPLATE = (
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/"
+    "World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+)
 
 def pytest_configure(config):
     config.addinivalue_line(
@@ -100,7 +105,7 @@ class PageDriver:
         return [url for url in self.requests if "/data/" in url]
 
     def tile_requests(self):
-        return [url for url in self.requests if "cartocdn.com" in url]
+        return [url for url in self.requests if TILE_HOST in url]
 
     def same_origin_requests(self):
         return [url for url in self.requests if url.startswith(self.site)]
